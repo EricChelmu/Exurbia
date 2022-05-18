@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 12f;
     private float gravity = -15f;
     private float jumpHeight = 2;
+    public float playerX;
+    public float playerZ;
+    public int health = 100;
 
     public int maxEnergy = 50000;
     public int currentEnergy;
@@ -34,6 +37,16 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
+        GameObject creatureSpawnerObject = GameObject.FindWithTag("CreatureSpawner");
+        if (creatureSpawnerObject != null)
+        {
+            CreatureBehaviour spawnControllerScript = creatureSpawnerObject.GetComponent<CreatureBehaviour>();
+            if (spawnControllerScript != null)
+            {
+                spawnControllerScript.PlayerScript = this;
+
+            }
+        }
         currentEnergy = 0;
         maxEnergy = 50000;
         energyBar.SetMaxEnergy(currentEnergy, maxEnergy);
@@ -41,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerX = transform.position.x;
+        playerZ = transform.position.z;
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
