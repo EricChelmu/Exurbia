@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Player movement parameters
     public CharacterController controller;
     private float speed = 12f;
     private float gravity = -15f;
     private float jumpHeight = 2;
+
+    //Player location parameters
     public float playerX;
     public float playerZ;
+
+    //Player health parameters
     public float minHealth = 75;
     public float maxHealth = 200;
     public float health;
 
+    //Energy parameters
     public int maxEnergy = 50000;
     public int currentEnergy;
     public EnergyBar energyBar;
+
+    //Flashlight parameters
     public GameObject lightSource;
     public bool flashlightOn;
 
+    //Jumping
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
