@@ -23,7 +23,6 @@ public class CreatureBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(timer);
         timer += Time.deltaTime;
         if (timer >= spawnTime -1)
         {
@@ -38,7 +37,7 @@ public class CreatureBehaviour : MonoBehaviour
     void SpawnCreature()
     {
         timer = 0;
-        CreatureClone = Instantiate(Creature, new Vector3(PlayerScript.playerX + Random.Range(-30, 30), 2.46f, PlayerScript.playerZ + Random.Range(-30, 30)), PlayerScript.transform.rotation);
+        CreatureClone = Instantiate(Creature, new Vector3(PlayerScript.playerX + Random.Range(-20, 20), 2.46f, PlayerScript.playerZ + Random.Range(-20, 20)), PlayerScript.transform.rotation);
     }
     void SetRandomSpawnTime()
     {

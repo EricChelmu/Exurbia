@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     private float jumpHeight = 2;
     public float playerX;
     public float playerZ;
-    public int health = 100;
+    public float minHealth = 75;
+    public float maxHealth = 200;
+    public float health;
 
     public int maxEnergy = 50000;
     public int currentEnergy;
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
+        health = minHealth;
         currentEnergy = 0;
         maxEnergy = 50000;
         energyBar.SetMaxEnergy(currentEnergy, maxEnergy);
@@ -103,5 +106,9 @@ public class PlayerMovement : MonoBehaviour
     {
         currentEnergy -= depleteEnergy;
         energyBar.SetEnergy(currentEnergy);
+    }
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
     }
 }
