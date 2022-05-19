@@ -9,6 +9,7 @@ TagManager:
   - LightBulb1
   - SelectionManager
   - MainCanvas
+  - CreatureSpawner
   layers:
   - Default
   - TransparentFX
