@@ -5,6 +5,8 @@ using UnityEngine;
 public class CreatureIsVisible : MonoBehaviour
 {
     Renderer m_Renderer;
+    //reference to the Player script
+    public PlayerMovement PlayerScript;
 
     // Start is called before the first frame update
     void Start()

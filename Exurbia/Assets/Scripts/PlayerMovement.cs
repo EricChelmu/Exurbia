@@ -28,26 +28,28 @@ public class PlayerMovement : MonoBehaviour
     public GameObject lightSource;
     public bool flashlightOn;
 
-    //Jumping
+    //Check if the player is on the ground
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-
     Vector3 velocity;
     bool isGrounded;
 
     void Start()
     {
+        //Tie this script to the SelectionManager script
         GameObject selectionManagerObject = GameObject.FindWithTag("SelectionManager");
         if (selectionManagerObject != null)
         {
-            SelectionManager gameControllerScript = selectionManagerObject.GetComponent<SelectionManager>();
-            if (gameControllerScript != null)
+            SelectionManager selectionManagerScript = selectionManagerObject.GetComponent<SelectionManager>();
+            if (selectionManagerScript != null)
             {
-                gameControllerScript.PlayerScript = this;
+                selectionManagerScript.PlayerScript = this;
 
             }
         }
+
+        //Tie this script to the CreatureSpawner script
         GameObject creatureSpawnerObject = GameObject.FindWithTag("CreatureSpawner");
         if (creatureSpawnerObject != null)
         {
@@ -58,6 +60,17 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
+
+        //Tie this script to the CreatureIsVisible script
+        GameObject creatureIsVisibleObject = GameObject.FindWithTag("CreatureIsVisible");
+        if (creatureIsVisibleObject != null)
+        {
+            CreatureIsVisible creatureIsVisibleScript = creatureIsVisibleObject.GetComponent<CreatureIsVisible>();
+            if (creatureIsVisibleScript != null)
+            {
+                creatureIsVisibleScript.PlayerScript = this;
+            }
+        }
         health = minHealth;
         currentEnergy = 0;
         maxEnergy = 50000;
@@ -66,29 +79,30 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Save location of player into a variable
         playerX = transform.position.x;
         playerZ = transform.position.z;
 
+        //Check if the player is grounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
         if(isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+
+        //Move the player
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
         Vector3 move = transform.right * x + transform.forward * z;
-
         controller.Move(move * speed * Time.deltaTime);
-        
+
+        //Player jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
-
         controller.Move(velocity * Time.deltaTime);
 
         //Turn on flashlight
