@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Exurbia/Assets/Objects/Eric.fbx.meta
 guid: 88af5be0d97e04542bbcda240b5ee107
+========
+guid: d5da159fb512800419c286e1e08740e6
+>>>>>>>> main:Exurbia/Assets/Objects/Washingmachine.fbx.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
