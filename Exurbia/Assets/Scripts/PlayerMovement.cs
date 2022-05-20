@@ -5,20 +5,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    private float speed = 6f;
-    private float gravity = -30f;
+    private float speed = 12f;
+    private float gravity = -15f;
     private float jumpHeight = 2;
     public float playerX;
     public float playerZ;
     public int health = 100;
-    public float timer;
 
     public int maxEnergy = 50000;
     public int currentEnergy;
     public EnergyBar energyBar;
     public GameObject lightSource;
     public bool flashlightOn;
-    public bool useFootsteps = true; 
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
