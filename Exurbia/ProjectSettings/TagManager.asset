@@ -10,6 +10,7 @@ TagManager:
   - SelectionManager
   - MainCanvas
   - CreatureSpawner
+  - CreatureIsVisible
   layers:
   - Default
   - TransparentFX

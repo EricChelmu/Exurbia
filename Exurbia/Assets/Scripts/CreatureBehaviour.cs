@@ -8,8 +8,6 @@ public class CreatureBehaviour : MonoBehaviour
     [SerializeField] private GameObject Creature;
     private GameObject CreatureClone;
     private float timer = 0;
-    private float playerX;
-    private float playerZ;
     private float minTime = 5;
     private float maxTime = 10;
     private float spawnTime;
@@ -23,7 +21,7 @@ public class CreatureBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(timer);
+        //Debug.Log(PlayerScript.health);
         timer += Time.deltaTime;
         if (timer >= spawnTime -1)
         {
@@ -38,7 +36,7 @@ public class CreatureBehaviour : MonoBehaviour
     void SpawnCreature()
     {
         timer = 0;
-        CreatureClone = Instantiate(Creature, new Vector3(PlayerScript.playerX + Random.Range(-30, 30), 2.46f, PlayerScript.playerZ + Random.Range(-30, 30)), PlayerScript.transform.rotation);
+        CreatureClone = Instantiate(Creature, new Vector3(PlayerScript.playerX + Random.Range(-20, 20), 2.46f, PlayerScript.playerZ + Random.Range(-20, 20)), PlayerScript.transform.rotation);
     }
     void SetRandomSpawnTime()
     {
