@@ -21,9 +21,8 @@ public class CreatureBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(PlayerScript.health);
         timer += Time.deltaTime;
-        if (timer >= spawnTime -1)
+        if (timer >= spawnTime - 0.1)
         {
             Destroy(CreatureClone);
         }

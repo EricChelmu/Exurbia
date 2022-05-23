@@ -13,7 +13,6 @@ public class CreatureIsVisible : MonoBehaviour
     {
         m_Renderer = GetComponent<Renderer>();
         fadeAlpha = PlayerScript.fade.GetComponent<CanvasGroup>();
-        fadeAlpha.alpha = 0;
     }
 
     // Update is called once per frame
@@ -24,10 +23,7 @@ public class CreatureIsVisible : MonoBehaviour
             if (PlayerScript.health <= 200)
             {
                 PlayerScript.health += 20 * Time.deltaTime;
-                if (PlayerScript.health >= 125)
-                {
-                    fadeAlpha.alpha += 0.001f;
-                }
+                fadeAlpha.alpha += 0.0008f;
                 if (PlayerScript.health >= 200)
                 {
                     Destroy(PlayerScript.Player);
@@ -40,10 +36,7 @@ public class CreatureIsVisible : MonoBehaviour
             if (PlayerScript.health >= 75)
             {
                 PlayerScript.health -= 20 * Time.deltaTime;
-                if (PlayerScript.health >= 125)
-                {
-                    fadeAlpha.alpha -= 0.001f;
-                }
+                fadeAlpha.alpha -= 0.0008f;
             }
             Debug.Log(PlayerScript.health);
         }
