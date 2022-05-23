@@ -8,8 +8,6 @@ public class CreatureBehaviour : MonoBehaviour
     [SerializeField] private GameObject Creature;
     private GameObject CreatureClone;
     private float timer = 0;
-    private float playerX;
-    private float playerZ;
     private float minTime = 5;
     private float maxTime = 10;
     private float spawnTime;
@@ -23,6 +21,7 @@ public class CreatureBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(PlayerScript.health);
         timer += Time.deltaTime;
         if (timer >= spawnTime -1)
         {

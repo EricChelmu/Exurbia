@@ -195,10 +195,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2327555556053001378}
   - component: {fileID: 7450718577372093874}
-  - component: {fileID: 1745812333072280151}
+  - component: {fileID: 7309994606764985061}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: CreatureIsVisible
+  m_TagString: CreatureIsVisible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,7 +292,7 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.002870462, y: -0.00008482952, z: -0.001500983}
     m_Extent: {x: 0.012690551, y: 0.02423688, z: 0.0069146454}
   m_DirtyAABB: 0
---- !u!114 &1745812333072280151
+--- !u!114 &7309994606764985061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,6 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2324397b3643cd64b85d2ee00fa6d505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerScript: {fileID: 0}
+  fade: {fileID: 4409683467205649006, guid: 521edd635ab656d41bb15826df8bb5c4, type: 3}
 --- !u!1 &1817614054184486402
 GameObject:
   m_ObjectHideFlags: 0

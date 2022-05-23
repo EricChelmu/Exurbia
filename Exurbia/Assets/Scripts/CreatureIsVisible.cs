@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class CreatureIsVisible : MonoBehaviour
 {
-    Renderer m_Renderer;
     //reference to the Player script
     public PlayerMovement PlayerScript;
-
+    Renderer m_Renderer;
+    CanvasGroup fadeAlpha;
     // Start is called before the first frame update
     void Start()
     {
         m_Renderer = GetComponent<Renderer>();
+        fadeAlpha = PlayerScript.fade.GetComponent<CanvasGroup>();
+        fadeAlpha.alpha = 0;
     }
 
     // Update is called once per frame
@@ -19,8 +21,31 @@ public class CreatureIsVisible : MonoBehaviour
     {
         if (m_Renderer.isVisible)
         {
-            Debug.Log("Creature is visible");
+            if (PlayerScript.health <= 200)
+            {
+                PlayerScript.health += 20 * Time.deltaTime;
+                if (PlayerScript.health >= 125)
+                {
+                    fadeAlpha.alpha += 0.001f;
+                }
+                if (PlayerScript.health >= 200)
+                {
+                    Destroy(PlayerScript.Player);
+                }
+            }
+            Debug.Log(PlayerScript.health);
         }
-        else Debug.Log("Creature is no longer visible");
+        else if (!m_Renderer.isVisible)
+        {
+            if (PlayerScript.health >= 75)
+            {
+                PlayerScript.health -= 20 * Time.deltaTime;
+                if (PlayerScript.health >= 125)
+                {
+                    fadeAlpha.alpha -= 0.001f;
+                }
+            }
+            Debug.Log(PlayerScript.health);
+        }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] public GameObject fade;
+    [SerializeField] public GameObject Player;
     //Player movement parameters
     public CharacterController controller;
     private float speed = 12f;
@@ -60,7 +62,15 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
-
+        //Base values
+        health = minHealth;
+        currentEnergy = 0;
+        maxEnergy = 50000;
+        energyBar.SetMaxEnergy(currentEnergy, maxEnergy);
+    }
+    // Update is called once per frame
+    void Update()
+    {
         //Tie this script to the CreatureIsVisible script
         GameObject creatureIsVisibleObject = GameObject.FindWithTag("CreatureIsVisible");
         if (creatureIsVisibleObject != null)
@@ -71,14 +81,6 @@ public class PlayerMovement : MonoBehaviour
                 creatureIsVisibleScript.PlayerScript = this;
             }
         }
-        health = minHealth;
-        currentEnergy = 0;
-        maxEnergy = 50000;
-        energyBar.SetMaxEnergy(currentEnergy, maxEnergy);
-    }
-    // Update is called once per frame
-    void Update()
-    {
         //Save location of player into a variable
         playerX = transform.position.x;
         playerZ = transform.position.z;
@@ -129,9 +131,5 @@ public class PlayerMovement : MonoBehaviour
     {
         currentEnergy -= depleteEnergy;
         energyBar.SetEnergy(currentEnergy);
-    }
-    public void TakeDamage(float amount)
-    {
-        health -= amount;
     }
 }
