@@ -9,6 +9,12 @@ public class GameManager : MonoBehaviour
     public bool lightOn;
     public bool WMachineOn;
     public bool paperRead;
+    [SerializeField] private GameObject Player;
+
+    void Start()
+    {
+        
+    }
     private void Awake()
     {
         Instance = this;
