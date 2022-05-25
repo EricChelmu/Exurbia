@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public GameObject Player;
     //Player movement parameters
     public CharacterController controller;
-    private float speed = 12f;
+    private float speed = 7f;
     private float gravity = -15f;
     private float jumpHeight = 2;
 
