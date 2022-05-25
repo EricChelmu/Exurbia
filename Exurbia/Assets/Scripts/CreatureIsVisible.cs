@@ -18,27 +18,25 @@ public class CreatureIsVisible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_Renderer.isVisible)
+        if (m_Renderer.isVisible && !Physics.Linecast(Camera.main.transform.position, transform.position))
         {
             if (PlayerScript.health <= 200)
             {
-                PlayerScript.health += 20 * Time.deltaTime;
+                PlayerScript.health += 23 * Time.deltaTime;
                 fadeAlpha.alpha += 0.0008f;
                 if (PlayerScript.health >= 200)
                 {
                     Destroy(PlayerScript.Player);
                 }
             }
-            Debug.Log(PlayerScript.health);
         }
-        else if (!m_Renderer.isVisible)
+        else if (!m_Renderer.isVisible && Physics.Linecast(Camera.main.transform.position, transform.position))
         {
             if (PlayerScript.health >= 75)
             {
-                PlayerScript.health -= 20 * Time.deltaTime;
+                PlayerScript.health -= 15 * Time.deltaTime;
                 fadeAlpha.alpha -= 0.0008f;
             }
-            Debug.Log(PlayerScript.health);
         }
     }
 }
