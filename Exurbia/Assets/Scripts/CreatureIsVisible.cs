@@ -8,6 +8,7 @@ public class CreatureIsVisible : MonoBehaviour
     public PlayerMovement PlayerScript;
     Renderer m_Renderer;
     CanvasGroup fadeAlpha;
+    private float fadeSpeed = 0.0038f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +17,16 @@ public class CreatureIsVisible : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        Debug.Log(PlayerScript.health);
+        Debug.Log(fadeAlpha.alpha);
         if (m_Renderer.isVisible && !Physics.Linecast(Camera.main.transform.position, transform.position))
         {
             if (PlayerScript.health <= 200)
             {
                 PlayerScript.health += 23 * Time.deltaTime;
-                fadeAlpha.alpha += 0.0008f;
+                fadeAlpha.alpha += fadeSpeed;
                 if (PlayerScript.health >= 200)
                 {
                     Destroy(PlayerScript.Player);
@@ -35,7 +38,7 @@ public class CreatureIsVisible : MonoBehaviour
             if (PlayerScript.health >= 75)
             {
                 PlayerScript.health -= 15 * Time.deltaTime;
-                fadeAlpha.alpha -= 0.0008f;
+                fadeAlpha.alpha -= fadeSpeed;
             }
         }
     }
