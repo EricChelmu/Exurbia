@@ -6,6 +6,7 @@ public class CreatureBehaviour : MonoBehaviour
 {
     public PlayerMovement PlayerScript;
     [SerializeField] private GameObject Creature;
+    [SerializeField] private GameObject Player;
     private GameObject CreatureClone;
     private float timer = 0;
     private float minTime = 5;
