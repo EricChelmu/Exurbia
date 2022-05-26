@@ -9152,7 +9152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerScript: {fileID: 0}
-  Creature: {fileID: 2267374725880341885, guid: 645d844fcd3b779488eb2c3765fcfce6, type: 3}
+  Creature: {fileID: 4023526738409184412, guid: 2f618df4788adf94b8f50a38ffd9d231, type: 3}
   Player: {fileID: 1632467762}
 --- !u!4 &1619979718
 Transform:
