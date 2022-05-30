@@ -8,13 +8,13 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
+    [SerializeField] private GameObject ItemPicked;
+    [SerializeField] private GameObject GenRestored;
+    [SerializeField] private GameObject Light1;
+    [SerializeField] private GameObject PaperGen;
+    [SerializeField] private GameObject PaperGenText;
 
     private Transform _selection;
-    public GameObject ItemPicked;
-    public GameObject GenRestored;
-    public GameObject Light1;
-    public GameObject PaperGen;
-    public GameObject PaperGenText;
     private GameObject PaperGenClone;
     private GameObject PaperGenTextClone;
     public PlayerMovement PlayerScript;
@@ -80,19 +80,24 @@ public class SelectionManager : MonoBehaviour
                         if (Input.GetKeyDown("e"))
                         {
                             //Fix generator by having cables
-                            if (GameManager.Instance.cablePicked == true)
+                            if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false)
                             {
-                                CreateEnergy(25000);
+                                CreateEnergy(2000);
                                 //Display text on screen
                                 GameObject Clone2 = Instantiate(GenRestored, new Vector3(0, -316, 0), transform.rotation);
                                 Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone2, 3);
+                                GameManager.Instance.generatorOn = true;
+                            }
+                            else if (GameManager.Instance.generatorOn == true)
+                            {
+                                GameManager.Instance.generatorOn = false;
                             }
                         }
                     }
                 }
                 //Check if you interact with light switch
-                if (hit.transform.gameObject.name == "Light Switch")
+                if (hit.transform.gameObject.name == "Light Switch1" || hit.transform.gameObject.name == "Light Switch2" || hit.transform.gameObject.name == "Light Switch3" || hit.transform.gameObject.name == "Light Switch4" || hit.transform.gameObject.name == "Light Switch5")
                 {
                     //Highlight the object yellow
                     var selectionRenderer = selection.GetComponent<Renderer>();
@@ -107,6 +112,7 @@ public class SelectionManager : MonoBehaviour
                                 //turn light on
                                 GameManager.Instance.lightOn = true;
                                 LightScript.TurnOnLight();
+                                ReduceEnergy(10);
                             }
                             else if (GameManager.Instance.lightOn == true)
                             {
@@ -131,6 +137,11 @@ public class SelectionManager : MonoBehaviour
                             if (GameManager.Instance.WMachineOn == false)
                             {
                                 ReduceEnergy(400);
+                                GameManager.Instance.WMachineOn = true;
+                            }
+                            else if (GameManager.Instance.WMachineOn == true)
+                            {
+                                GameManager.Instance.WMachineOn = false;
                             }
                         }
                     }
@@ -153,6 +164,52 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperGenText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a TV
+                if (hit.transform.gameObject.name == "TV")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.tvOn == false)
+                            {
+                                ReduceEnergy(100);
+                                GameManager.Instance.tvOn = true;
+                            }
+                            else if (GameManager.Instance.tvOn == true)
+                            {
+                                GameManager.Instance.tvOn = false;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a Radio
+                if (hit.transform.gameObject.name == "Radio")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.radioOn == false)
+                            {
+                                ReduceEnergy(10);
+                                GameManager.Instance.radioOn = true;
+                            }
+                            else if (GameManager.Instance.radioOn == true)
+                            {
+                                GameManager.Instance.radioOn = false;
                             }
                         }
                     }
