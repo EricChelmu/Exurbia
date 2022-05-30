@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float health;
 
     //Energy parameters
-    public int maxEnergy = 50000;
+    public int maxEnergy = 2000;
     public int currentEnergy;
     public EnergyBar energyBar;
 
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         //Base values
         health = minHealth;
         currentEnergy = 0;
-        maxEnergy = 50000;
+        maxEnergy = 2000;
         energyBar.SetMaxEnergy(currentEnergy, maxEnergy);
     }
     // Update is called once per frame
