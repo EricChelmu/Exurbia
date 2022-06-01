@@ -5,10 +5,14 @@ using UnityEngine;
 public class CreatureIsVisible : MonoBehaviour
 {
     //reference to the Player script
+    [SerializeField] GameObject Creature;
     public PlayerMovement PlayerScript;
     Renderer m_Renderer;
     CanvasGroup fadeAlpha;
-    private float fadeSpeed = 0.0038f;
+    private float fadeSpeed = 0.003f;
+    private float playerX;
+    private float playerY;
+    private float playerZ;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +23,9 @@ public class CreatureIsVisible : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        playerX = PlayerScript.transform.position.x + 2;
+        playerY = PlayerScript.transform.position.y;
+        playerZ = PlayerScript.transform.position.z + 2;
         Debug.Log(PlayerScript.health);
         Debug.Log(fadeAlpha.alpha);
         if (m_Renderer.isVisible && !Physics.Linecast(Camera.main.transform.position, transform.position))
@@ -27,6 +34,11 @@ public class CreatureIsVisible : MonoBehaviour
             {
                 PlayerScript.health += 23 * Time.deltaTime;
                 fadeAlpha.alpha += fadeSpeed;
+                if (PlayerScript.health >= 190)
+                {
+                    Creature.transform.position = new Vector3(playerX, playerY, playerZ);
+                    Creature.transform.rotation = Camera.main.transform.rotation;
+                }
                 if (PlayerScript.health >= 200)
                 {
                     Destroy(PlayerScript.Player);
