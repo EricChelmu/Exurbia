@@ -10496,7 +10496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0466d5ea422f4b94d810734ce2df71ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 600
+  mouseSensitivity: 300
   playerBody: {fileID: 1632467764}
 --- !u!1001 &965725403
 PrefabInstance:
@@ -16830,7 +16830,7 @@ MonoBehaviour:
   minHealth: 75
   maxHealth: 200
   health: 100
-  maxEnergy: 50
+  maxEnergy: 2000
   currentEnergy: 0
   energyBar: {fileID: 2208031139323708175}
   lightSource: {fileID: 423484506}
@@ -23279,7 +23279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3733529789147339558, guid: 2b75d23feb53f854990129ecd5088c79, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.714
+      value: -7.1
       objectReference: {fileID: 0}
     - target: {fileID: 3733529789147339558, guid: 2b75d23feb53f854990129ecd5088c79, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23287,7 +23287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3733529789147339558, guid: 2b75d23feb53f854990129ecd5088c79, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.671997
+      value: -11.55
       objectReference: {fileID: 0}
     - target: {fileID: 3733529789147339558, guid: 2b75d23feb53f854990129ecd5088c79, type: 3}
       propertyPath: m_LocalRotation.w

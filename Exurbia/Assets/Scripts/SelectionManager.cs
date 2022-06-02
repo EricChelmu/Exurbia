@@ -89,10 +89,6 @@ public class SelectionManager : MonoBehaviour
                                 Destroy(Clone2, 3);
                                 GameManager.Instance.generatorOn = true;
                             }
-                            else if (GameManager.Instance.generatorOn == true)
-                            {
-                                GameManager.Instance.generatorOn = false;
-                            }
                         }
                     }
                 }
@@ -138,10 +134,6 @@ public class SelectionManager : MonoBehaviour
                             {
                                 ReduceEnergy(400);
                                 GameManager.Instance.WMachineOn = true;
-                            }
-                            else if (GameManager.Instance.WMachineOn == true)
-                            {
-                                GameManager.Instance.WMachineOn = false;
                             }
                         }
                     }
