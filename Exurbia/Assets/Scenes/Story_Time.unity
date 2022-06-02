@@ -329,7 +329,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: The world has suffered great struggles due to the sun being less able to
-    reach the surface. The smog created by the burning of fossil fuels has completed
+    reach the surface. The smog created by the burning of fossil fuels has completely
     encumbered the planet. This smog is the origin of the changing people in the
     world.
   m_isRightToLeft: 0
@@ -827,7 +827,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: However through all this turmoil and suffering, you have not changed in
     the slightest. You know that there must be something in your body that can save
-    Huminaty.
+    Humanity.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
