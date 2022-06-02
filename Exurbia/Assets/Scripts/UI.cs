@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
@@ -16,12 +17,12 @@ public class UI : MonoBehaviour
         Transform inventoryPanel = transform.Find("InventoryPanel");
         foreach(Transform slot in inventoryPanel)
         {
-            //Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
+            Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
 
-            //if(!image.enabled)
+            if(!image.enabled)
             {
-                //image.enabled = true;
-                //image.sprite = e.Item.Image;
+                image.enabled = true;
+                image.sprite = e.Item.Image;
 
                 //store reference to an item
 
