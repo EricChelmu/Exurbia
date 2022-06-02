@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] public GameObject fade;
     [SerializeField] public GameObject Player;
-    //Player movement parameters
+    
+    //Old Player movement stuff
     //public CharacterController characterController;
     //private float speed = 7f;
     //private float gravity = -15f;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject lightSource;
     public bool flashlightOn;
 
+    //Old ground check
     //Check if the player is on the ground
     //public Transform groundCheck;
     //public float groundDistance = 0.4f;
@@ -39,8 +41,6 @@ public class PlayerMovement : MonoBehaviour
 
     //Player Inventory
     public Inventory inventory;
-
-    //New movement parameters
     public bool CanMove { get; private set; } = true;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
