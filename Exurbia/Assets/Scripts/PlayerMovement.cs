@@ -37,6 +37,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    //Player Inventory
+    public Inventory inventory;
+
     void Start()
     {
         //Tie this script to the SelectionManager script
@@ -131,4 +134,13 @@ public class PlayerMovement : MonoBehaviour
         currentEnergy -= depleteEnergy;
         energyBar.SetEnergy(currentEnergy);
     }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
+        }
+    }
 }
+
