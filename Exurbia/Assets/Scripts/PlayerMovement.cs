@@ -62,18 +62,17 @@ public class PlayerMovement : MonoBehaviour
             if (spawnControllerScript != null)
             {
                 spawnControllerScript.PlayerScript = this;
-
             }
         }
         //Base values
         health = minHealth;
         currentEnergy = 0;
-        maxEnergy = 2000;
         energyBar.SetMaxEnergy(currentEnergy, maxEnergy);
     }
     // Update is called once per frame
     void Update()
     {
+        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
         //Tie this script to the CreatureIsVisible script
         GameObject creatureIsVisibleObject = GameObject.FindWithTag("CreatureIsVisible");
         if (creatureIsVisibleObject != null)
