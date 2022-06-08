@@ -33,6 +33,7 @@ public class CreatureIsVisible : MonoBehaviour
         {
             if (PlayerScript.health <= 200)
             {
+                //soundhere
                 PlayerScript.health += 23 * Time.deltaTime;
                 fadeAlpha.alpha += fadeSpeed;
                 if (PlayerScript.health >= 190)

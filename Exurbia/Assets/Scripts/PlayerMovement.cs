@@ -7,12 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public GameObject fade;
     [SerializeField] public GameObject Player;
     
-    //Old Player movement stuff
-    //public CharacterController characterController;
-    //private float speed = 7f;
-    //private float gravity = -15f;
-    //private float jumpHeight = 2;
-
     //Player location parameters
     public float playerX;
     public float playerZ;
@@ -30,14 +24,6 @@ public class PlayerMovement : MonoBehaviour
     //Flashlight parameters
     public GameObject lightSource;
     public bool flashlightOn;
-
-    //Old ground check
-    //Check if the player is on the ground
-    //public Transform groundCheck;
-    //public float groundDistance = 0.4f;
-    //public LayerMask groundMask;
-    //Vector3 velocity;
-    //bool isGrounded;
 
     //Player Inventory
     public Inventory inventory;
@@ -105,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip[] grassClips = default;
     private float footstepTimer = 0;
     private float GetCurrentOffset => isCrouching ? baseStepSpeed * crouchStepMultiplier : IsSprinting ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
+
     private Camera playerCamera;
     private CharacterController characterController;
 
@@ -186,29 +173,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        /*//Check if the player is grounded
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if(isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-
-        //Move the player
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
-
-        //Player jumping
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);*/
-
-        //Turn on flashlight
+       
         if (Input.GetKeyDown("f"))
         {
             if (flashlightOn == false)
