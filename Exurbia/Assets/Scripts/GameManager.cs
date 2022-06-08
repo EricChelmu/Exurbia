@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     public bool tvOn = false;
     public bool generatorOn = false;
     public bool radioOn = false;
+    public bool microwaveOn = false;
+    public bool laptopOn = false;
+    public bool fridgeOn = false;
+    public bool breakerBoxOn = false;
+    public bool carOn = false;
     [SerializeField] private GameObject Player;
 
     void Start()
