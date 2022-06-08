@@ -26,7 +26,7 @@ public class SelectionManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+    void Update()
     {
         if (GameManager.Instance.paperRead == true && Input.GetKeyDown("e"))
         {
@@ -168,7 +168,7 @@ public class SelectionManager : MonoBehaviour
                     {
                         //Highlight the object yellow
                         selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
+                        //When E is pressed the TV is turned on/off
                         if (Input.GetKeyDown("e"))
                         {
                             if (GameManager.Instance.tvOn == false)
@@ -191,7 +191,7 @@ public class SelectionManager : MonoBehaviour
                     {
                         //Highlight the object yellow
                         selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
+                        //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
                             if (GameManager.Instance.radioOn == false)

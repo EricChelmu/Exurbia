@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public GameObject fade;
-    [SerializeField] public GameObject Player;
+    //Collecting references
+    public GameObject fade;
+    public GameObject Player;
     
     //Old Player movement stuff
     //public CharacterController characterController;
