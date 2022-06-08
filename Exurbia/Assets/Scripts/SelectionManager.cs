@@ -8,11 +8,20 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
-    [SerializeField] private GameObject ItemPicked;
+    [SerializeField] private GameObject CablePicked;
     [SerializeField] private GameObject GenRestored;
     [SerializeField] private GameObject Light1;
     [SerializeField] private GameObject PaperGen;
     [SerializeField] private GameObject PaperGenText;
+    [SerializeField] private GameObject GenNoCable;
+    [SerializeField] private GameObject a;
+    [SerializeField] private GameObject b;
+    [SerializeField] private GameObject c;
+    [SerializeField] private GameObject d;
+    [SerializeField] private GameObject e;
+    [SerializeField] private GameObject f;
+
+    public float distPlayerObj;
 
     private Transform _selection;
     private GameObject PaperGenClone;
@@ -45,8 +54,10 @@ public class SelectionManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            distPlayerObj = Vector3.Distance(PlayerScript.transform.position, hit.transform.position);
+            Debug.Log(distPlayerObj);
             var selection = hit.transform;
-            if (selection.CompareTag(selectableTag))
+            if (selection.CompareTag(selectableTag) && distPlayerObj <= 3f)
             {
                 //Check if you pick up a cable
                 if (hit.transform.gameObject.name == "Cable")
@@ -62,7 +73,7 @@ public class SelectionManager : MonoBehaviour
                             Destroy(hit.transform.gameObject);
                             GameManager.Instance.cablePicked = true;
                             //Display text on screen
-                            GameObject Clone = Instantiate(ItemPicked, new Vector3(0, -316, 0), transform.rotation);
+                            GameObject Clone = Instantiate(CablePicked, new Vector3(0, -316, 0), transform.rotation);
                             Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                             Destroy(Clone, 3);
                         }
@@ -80,6 +91,13 @@ public class SelectionManager : MonoBehaviour
                         if (Input.GetKeyDown("e"))
                         {
                             //Fix generator by having cables
+                            if (GameManager.Instance.cablePicked == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
+                            }
+                            
                             if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false)
                             {
                                 CreateEnergy(2000);
