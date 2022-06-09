@@ -10,7 +10,6 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private Material defaultMaterial;
 
     //Reference to texts when objects are interacted with
-    [SerializeField] private GameObject PaperGen;
     [SerializeField] private GameObject CablePicked;
     [SerializeField] private GameObject GenRestored;
     [SerializeField] private GameObject Light1;
@@ -33,6 +32,16 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private GameObject PaperRadioText;
     [SerializeField] private GameObject PaperTVText;
     [SerializeField] private GameObject PaperWMachineText;
+
+    //Reference to papers
+    [SerializeField] private GameObject PaperGen;
+    [SerializeField] private GameObject PaperCar;
+    [SerializeField] private GameObject PaperFridge;
+    [SerializeField] private GameObject PaperLaptop;
+    [SerializeField] private GameObject PaperMicrowave;
+    [SerializeField] private GameObject PaperRadio;
+    [SerializeField] private GameObject PaperTV;
+    [SerializeField] private GameObject PaperWMachine;
 
     private float distPlayerObj;
 
@@ -343,6 +352,160 @@ public class SelectionManager : MonoBehaviour
                                 Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone2, 3);
                                 GameManager.Instance.carOn = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a paper
+                if (hit.transform.gameObject.name == "PaperCar")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.paperRead == false)
+                            {
+                                PaperGenClone = Instantiate(PaperCar, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
+                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
+                                PaperGenTextClone = Instantiate(PaperCarText, new Vector3(0, 0, 0), transform.rotation);
+                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameManager.Instance.paperRead = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a paper
+                if (hit.transform.gameObject.name == "PaperFridge")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.paperRead == false)
+                            {
+                                PaperGenClone = Instantiate(PaperFridge, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
+                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
+                                PaperGenTextClone = Instantiate(PaperFridgeText, new Vector3(0, 0, 0), transform.rotation);
+                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameManager.Instance.paperRead = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a paper
+                if (hit.transform.gameObject.name == "PaperLaptop")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.paperRead == false)
+                            {
+                                PaperGenClone = Instantiate(PaperLaptop, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
+                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
+                                PaperGenTextClone = Instantiate(PaperLaptopText, new Vector3(0, 0, 0), transform.rotation);
+                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameManager.Instance.paperRead = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a paper
+                if (hit.transform.gameObject.name == "PaperMicrowave")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.paperRead == false)
+                            {
+                                PaperGenClone = Instantiate(PaperMicrowave, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
+                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
+                                PaperGenTextClone = Instantiate(PaperMicrowave, new Vector3(0, 0, 0), transform.rotation);
+                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameManager.Instance.paperRead = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a paper
+                if (hit.transform.gameObject.name == "PaperRadio")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.paperRead == false)
+                            {
+                                PaperGenClone = Instantiate(PaperRadio, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
+                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
+                                PaperGenTextClone = Instantiate(PaperRadioText, new Vector3(0, 0, 0), transform.rotation);
+                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameManager.Instance.paperRead = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a paper
+                if (hit.transform.gameObject.name == "PaperTV")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.paperRead == false)
+                            {
+                                PaperGenClone = Instantiate(PaperTV, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
+                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
+                                PaperGenTextClone = Instantiate(PaperTVText, new Vector3(0, 0, 0), transform.rotation);
+                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameManager.Instance.paperRead = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a paper
+                if (hit.transform.gameObject.name == "PaperWMachine")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the paper is picked up and showed first person
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.paperRead == false)
+                            {
+                                PaperGenClone = Instantiate(PaperWMachine, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
+                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
+                                PaperGenTextClone = Instantiate(PaperWMachineText, new Vector3(0, 0, 0), transform.rotation);
+                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameManager.Instance.paperRead = true;
                             }
                         }
                     }

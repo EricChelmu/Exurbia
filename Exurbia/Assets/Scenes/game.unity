@@ -2896,7 +2896,6 @@ MonoBehaviour:
   selectableTag: Selectable
   highlightMaterial: {fileID: 2100000, guid: 063c8d760ca753a479c7862f290823a9, type: 2}
   defaultMaterial: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  PaperGen: {fileID: 8586654167734119480, guid: 42ad591477e48cd4880ff41ef3aae816, type: 3}
   CablePicked: {fileID: 3588757526797371201, guid: d917f7c3843706948bca0dc4259a01d4, type: 3}
   GenRestored: {fileID: 3730480553022257225, guid: 83618e8784a2f6f4c9fd3eba79de2ce0, type: 3}
   Light1: {fileID: 7698074326166234872, guid: 9daa8914ae580df41a9604e253b572e7, type: 3}
@@ -2910,13 +2909,21 @@ MonoBehaviour:
   FridgeText: {fileID: 1854545080638902287, guid: 2a2797e1a6d0aca41aecf4f7a5eab626, type: 3}
   CarText: {fileID: 2279235059755674174, guid: 428a80d1fb574634a98e1f70c99fb9a7, type: 3}
   PaperGenText: {fileID: 8101835590839681485, guid: 35925b9d3f2ff9a49aa86c1c008e217c, type: 3}
-  PaperCarText: {fileID: 0}
-  PaperFridgeText: {fileID: 0}
-  PaperLaptopText: {fileID: 0}
-  PaperMicrowaveText: {fileID: 0}
-  PaperRadioText: {fileID: 0}
-  PaperTVText: {fileID: 0}
-  PaperWMachineText: {fileID: 0}
+  PaperCarText: {fileID: 4607528348654299215, guid: 62902a1725abc6a4b8f6492ab9eb03c5, type: 3}
+  PaperFridgeText: {fileID: 8203028501032524472, guid: 5b41f0e8c23623646aeafb5424df9f5a, type: 3}
+  PaperLaptopText: {fileID: 2000223721311294147, guid: 580d0e2321b9c494981d09611624d881, type: 3}
+  PaperMicrowaveText: {fileID: 8664042002149397014, guid: 33810ca6621c198408061a79ceadcece, type: 3}
+  PaperRadioText: {fileID: 5856633485853596586, guid: 38f75a234b6e47e44a14acf0fe878c66, type: 3}
+  PaperTVText: {fileID: 1863646397221585834, guid: 13aa74800279d17409af155bc9d29607, type: 3}
+  PaperWMachineText: {fileID: 6820290420531133920, guid: 3cc4f931282855549bafd8fc272c50b1, type: 3}
+  PaperGen: {fileID: 8586654167734119480, guid: 42ad591477e48cd4880ff41ef3aae816, type: 3}
+  PaperCar: {fileID: 1548232094266728647, guid: 7df727c2a086c0640935456327a61852, type: 3}
+  PaperFridge: {fileID: 7976482076135947968, guid: d4337d98c0fecb94c841f0e852de0c15, type: 3}
+  PaperLaptop: {fileID: 7569259966733073339, guid: d236f515b31320e41ab00d03718ffa0b, type: 3}
+  PaperMicrowave: {fileID: 4587883892559273023, guid: bb11199a9ed3eac44996e51159f36507, type: 3}
+  PaperRadio: {fileID: 533191581272061342, guid: 628de1049b9e3fc4b88563617e83ee0a, type: 3}
+  PaperTV: {fileID: 2575672185387132499, guid: ab2c30b817efb5b4c8450c05dcaf84c8, type: 3}
+  PaperWMachine: {fileID: 8257285803231080834, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
   PlayerScript: {fileID: 0}
   LightScript: {fileID: 0}
 --- !u!4 &224236454 stripped
