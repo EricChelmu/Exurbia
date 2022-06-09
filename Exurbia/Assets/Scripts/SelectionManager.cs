@@ -8,11 +8,12 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
+
+    //Reference to texts when objects are interacted with
+    [SerializeField] private GameObject PaperGen;
     [SerializeField] private GameObject CablePicked;
     [SerializeField] private GameObject GenRestored;
     [SerializeField] private GameObject Light1;
-    [SerializeField] private GameObject PaperGen;
-    [SerializeField] private GameObject PaperGenText;
     [SerializeField] private GameObject GenNoCable;
     [SerializeField] private GameObject WMachineText;
     [SerializeField] private GameObject MicrowaveText;
@@ -23,7 +24,17 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private GameObject FridgeText;
     [SerializeField] private GameObject CarText;
 
-    public float distPlayerObj;
+    //Reference to text on papers related to objects
+    [SerializeField] private GameObject PaperGenText;
+    [SerializeField] private GameObject PaperCarText;
+    [SerializeField] private GameObject PaperFridgeText;
+    [SerializeField] private GameObject PaperLaptopText;
+    [SerializeField] private GameObject PaperMicrowaveText;
+    [SerializeField] private GameObject PaperRadioText;
+    [SerializeField] private GameObject PaperTVText;
+    [SerializeField] private GameObject PaperWMachineText;
+
+    private float distPlayerObj;
 
     private Transform _selection;
     private GameObject PaperGenClone;

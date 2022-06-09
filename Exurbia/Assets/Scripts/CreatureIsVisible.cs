@@ -49,7 +49,7 @@ public class CreatureIsVisible : MonoBehaviour
                 }
             }
         }
-        else if (!m_Renderer.isVisible && Physics.Linecast(Camera.main.transform.position, transform.position))
+        else if (!m_Renderer.isVisible)
         {
             if (PlayerScript.health >= 75)
             {
