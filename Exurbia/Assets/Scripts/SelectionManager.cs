@@ -119,7 +119,7 @@ public class SelectionManager : MonoBehaviour
                                 Destroy(Clone2, 3);
                             }
                             
-                            if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false)
+                            if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false && GameManager.Instance.paperGenRead == true)
                             {
                                 CreateEnergy(2000);
                                 //Display text on screen
@@ -169,7 +169,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the washing machine turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true)
+                            if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperWMachineRead == true)
                             {
                                 ReduceEnergy(400);
                                 GameObject Clone2 = Instantiate(WMachineText, new Vector3(0, -316, 0), transform.rotation);
@@ -198,6 +198,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperGenText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                                GameManager.Instance.paperGenRead = true;
                             }
                         }
                     }
@@ -213,7 +214,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the TV is turned on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true)
+                            if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperTVRead == true)
                             {
                                 ReduceEnergy(100);
                                 GameObject Clone2 = Instantiate(TVText, new Vector3(0, -316, 0), transform.rotation);
@@ -235,7 +236,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true)
+                            if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperRadioRead == true)
                             {
                                 ReduceEnergy(10);
                                 GameObject Clone2 = Instantiate(RadioText, new Vector3(0, -316, 0), transform.rotation);
@@ -257,7 +258,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the microwave turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true)
+                            if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperFridgeRead == true)
                             {
                                 ReduceEnergy(250);
                                 GameObject Clone2 = Instantiate(FridgeText, new Vector3(0, -316, 0), transform.rotation);
@@ -279,7 +280,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true)
+                            if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperMicrowaveRead == true)
                             {
                                 ReduceEnergy(600);
                                 GameObject Clone2 = Instantiate(MicrowaveText, new Vector3(0, -316, 0), transform.rotation);
@@ -301,7 +302,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true)
+                            if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperLaptopRead == true)
                             {
                                 ReduceEnergy(100);
                                 GameObject Clone2 = Instantiate(LaptopText, new Vector3(0, -316, 0), transform.rotation);
@@ -345,7 +346,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true)
+                            if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperCarRead == true)
                             {
                                 ReduceEnergy(100);
                                 GameObject Clone2 = Instantiate(CarText, new Vector3(0, -316, 0), transform.rotation);
@@ -374,6 +375,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperCarText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                                GameManager.Instance.paperCarRead = true;
                             }
                         }
                     }
@@ -396,6 +398,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperFridgeText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                                GameManager.Instance.paperFridgeRead = true;
                             }
                         }
                     }
@@ -418,6 +421,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperLaptopText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                                GameManager.Instance.paperLaptopRead = true;
                             }
                         }
                     }
@@ -440,6 +444,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperMicrowave, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                                GameManager.Instance.paperMicrowaveRead = true;
                             }
                         }
                     }
@@ -462,6 +467,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperRadioText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                                GameManager.Instance.paperRadioRead = true;
                             }
                         }
                     }
@@ -484,6 +490,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperTVText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                                GameManager.Instance.paperTVRead = true;
                             }
                         }
                     }
@@ -506,6 +513,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperWMachineText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
+                                GameManager.Instance.paperWMachineRead = true;
                             }
                         }
                     }
