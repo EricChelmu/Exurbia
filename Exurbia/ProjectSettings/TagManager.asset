@@ -11,6 +11,8 @@ TagManager:
   - MainCanvas
   - CreatureSpawner
   - CreatureIsVisible
+  - Footsteps/WOOD
+  - Footsteps/GRASS
   layers:
   - Default
   - TransparentFX

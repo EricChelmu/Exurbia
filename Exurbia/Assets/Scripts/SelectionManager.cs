@@ -8,11 +8,22 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
-    [SerializeField] private GameObject ItemPicked;
+    [SerializeField] private GameObject CablePicked;
     [SerializeField] private GameObject GenRestored;
     [SerializeField] private GameObject Light1;
     [SerializeField] private GameObject PaperGen;
     [SerializeField] private GameObject PaperGenText;
+    [SerializeField] private GameObject GenNoCable;
+    [SerializeField] private GameObject WMachineText;
+    [SerializeField] private GameObject MicrowaveText;
+    [SerializeField] private GameObject TVText;
+    [SerializeField] private GameObject LaptopText;
+    [SerializeField] private GameObject RadioText;
+    [SerializeField] private GameObject BreakerBoxText;
+    [SerializeField] private GameObject FridgeText;
+    [SerializeField] private GameObject CarText;
+
+    public float distPlayerObj;
 
     private Transform _selection;
     private GameObject PaperGenClone;
@@ -26,7 +37,7 @@ public class SelectionManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+    void Update()
     {
         if (GameManager.Instance.paperRead == true && Input.GetKeyDown("e"))
         {
@@ -45,8 +56,10 @@ public class SelectionManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            distPlayerObj = Vector3.Distance(PlayerScript.transform.position, hit.transform.position);
+            Debug.Log(distPlayerObj);
             var selection = hit.transform;
-            if (selection.CompareTag(selectableTag))
+            if (selection.CompareTag(selectableTag) && distPlayerObj <= 7f)
             {
                 //Check if you pick up a cable
                 if (hit.transform.gameObject.name == "Cable")
@@ -62,7 +75,7 @@ public class SelectionManager : MonoBehaviour
                             Destroy(hit.transform.gameObject);
                             GameManager.Instance.cablePicked = true;
                             //Display text on screen
-                            GameObject Clone = Instantiate(ItemPicked, new Vector3(0, -316, 0), transform.rotation);
+                            GameObject Clone = Instantiate(CablePicked, new Vector3(0, -316, 0), transform.rotation);
                             Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                             Destroy(Clone, 3);
                         }
@@ -80,6 +93,13 @@ public class SelectionManager : MonoBehaviour
                         if (Input.GetKeyDown("e"))
                         {
                             //Fix generator by having cables
+                            if (GameManager.Instance.cablePicked == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
+                            }
+                            
                             if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false)
                             {
                                 CreateEnergy(2000);
@@ -93,7 +113,7 @@ public class SelectionManager : MonoBehaviour
                     }
                 }
                 //Check if you interact with light switch
-                if (hit.transform.gameObject.name == "Light Switch1" || hit.transform.gameObject.name == "Light Switch2" || hit.transform.gameObject.name == "Light Switch3" || hit.transform.gameObject.name == "Light Switch4" || hit.transform.gameObject.name == "Light Switch5")
+                if (hit.transform.gameObject.name == "Light Switch1")
                 {
                     //Highlight the object yellow
                     var selectionRenderer = selection.GetComponent<Renderer>();
@@ -130,9 +150,12 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the washing machine turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.WMachineOn == false)
+                            if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(400);
+                                GameObject Clone2 = Instantiate(WMachineText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
                                 GameManager.Instance.WMachineOn = true;
                             }
                         }
@@ -168,17 +191,16 @@ public class SelectionManager : MonoBehaviour
                     {
                         //Highlight the object yellow
                         selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
+                        //When E is pressed the TV is turned on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.tvOn == false)
+                            if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(100);
+                                GameObject Clone2 = Instantiate(TVText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
                                 GameManager.Instance.tvOn = true;
-                            }
-                            else if (GameManager.Instance.tvOn == true)
-                            {
-                                GameManager.Instance.tvOn = false;
                             }
                         }
                     }
@@ -191,17 +213,126 @@ public class SelectionManager : MonoBehaviour
                     {
                         //Highlight the object yellow
                         selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
+                        //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.radioOn == false)
+                            if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(10);
+                                GameObject Clone2 = Instantiate(RadioText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
                                 GameManager.Instance.radioOn = true;
                             }
-                            else if (GameManager.Instance.radioOn == true)
+                        }
+                    }
+                }
+                //Check if you interact with a Fridge
+                if (hit.transform.gameObject.name == "Fridge")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the microwave turns on/off
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true)
                             {
-                                GameManager.Instance.radioOn = false;
+                                ReduceEnergy(250);
+                                GameObject Clone2 = Instantiate(FridgeText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
+                                GameManager.Instance.fridgeOn = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a Microwave
+                if (hit.transform.gameObject.name == "Microwave")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the radio turns on/off
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true)
+                            {
+                                ReduceEnergy(600);
+                                GameObject Clone2 = Instantiate(MicrowaveText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
+                                GameManager.Instance.microwaveOn = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a Laptop
+                if (hit.transform.gameObject.name == "Laptop")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the radio turns on/off
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true)
+                            {
+                                ReduceEnergy(100);
+                                GameObject Clone2 = Instantiate(LaptopText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
+                                GameManager.Instance.laptopOn = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a Breaker Box
+                if (hit.transform.gameObject.name == "Breaker Box")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the radio turns on/off
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.breakerBoxOn == false && GameManager.Instance.generatorOn == true)
+                            {
+                                ReduceEnergy(100);
+                                GameObject Clone2 = Instantiate(BreakerBoxText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
+                                GameManager.Instance.breakerBoxOn = true;
+                            }
+                        }
+                    }
+                }
+                //Check if you interact with a Car
+                if (hit.transform.gameObject.name == "Car")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the radio turns on/off
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true)
+                            {
+                                ReduceEnergy(100);
+                                GameObject Clone2 = Instantiate(CarText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
+                                GameManager.Instance.carOn = true;
                             }
                         }
                     }
