@@ -57,7 +57,6 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             distPlayerObj = Vector3.Distance(PlayerScript.transform.position, hit.transform.position);
-            Debug.Log(distPlayerObj);
             var selection = hit.transform;
             if (selection.CompareTag(selectableTag) && distPlayerObj <= 7f)
             {

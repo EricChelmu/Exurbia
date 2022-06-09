@@ -10,7 +10,7 @@ public class CreatureIsVisible : MonoBehaviour
     public PlayerMovement PlayerScript;
     Renderer m_Renderer;
     CanvasGroup fadeAlpha;
-    private float fadeSpeed = 0.003f;
+    private float fadeSpeed = 0.007f;
     private float playerX;
     private float playerY;
     private float playerZ;
@@ -34,7 +34,7 @@ public class CreatureIsVisible : MonoBehaviour
             if (PlayerScript.health <= 200)
             {
                 //soundhere
-                PlayerScript.health += 23 * Time.deltaTime;
+                PlayerScript.health += 45 * Time.deltaTime;
                 fadeAlpha.alpha += fadeSpeed;
                 if (PlayerScript.health >= 190)
                 {
@@ -53,7 +53,7 @@ public class CreatureIsVisible : MonoBehaviour
         {
             if (PlayerScript.health >= 75)
             {
-                PlayerScript.health -= 15 * Time.deltaTime;
+                PlayerScript.health -= 35 * Time.deltaTime;
                 fadeAlpha.alpha -= fadeSpeed;
             }
         }
