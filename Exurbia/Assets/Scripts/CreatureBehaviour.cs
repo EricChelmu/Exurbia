@@ -36,7 +36,7 @@ public class CreatureBehaviour : MonoBehaviour
     void SpawnCreature()
     {
         timer = 0;
-        CreatureClone = Instantiate(Creature, new Vector3(PlayerScript.playerX + Random.Range(-20, 20), PlayerScript.transform.position.y, PlayerScript.playerZ + Random.Range(-20, 20)), PlayerScript.transform.rotation);
+        CreatureClone = Instantiate(Creature, new Vector3(PlayerScript.playerX + Random.Range(-20, 20), PlayerScript.transform.position.y + 3, PlayerScript.playerZ + Random.Range(-20, 20)), PlayerScript.transform.rotation);
     }
     void SetRandomSpawnTime()
     {
