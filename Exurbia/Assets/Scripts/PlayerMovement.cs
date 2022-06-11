@@ -284,7 +284,7 @@ public class PlayerMovement : MonoBehaviour
         if (!characterController.isGrounded)
             moveDirection.y -= gravity * Time.deltaTime;
 
-        characterController.Move(moveDirection * Time.deltaTime);
+        characterController.Move (moveDirection * Time.deltaTime);
     }
     private IEnumerator CrouchStand()
     {
