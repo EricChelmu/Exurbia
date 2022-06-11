@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CreatureIsVisible : MonoBehaviour
 {
     //reference to the Player script
-    [SerializeField] private GameObject Creature;
+    [SerializeField] GameObject Creature;
     public PlayerMovement PlayerScript;
     Renderer m_Renderer;
     CanvasGroup fadeAlpha;
@@ -31,7 +31,6 @@ public class CreatureIsVisible : MonoBehaviour
         Debug.Log(fadeAlpha.alpha);
         if (m_Renderer.isVisible && !Physics.Linecast(Camera.main.transform.position, transform.position))
         {
-            //transform.rotation = PlayerScript.transform.rotation;
             if (PlayerScript.health <= 200)
             {
                 //soundhere
@@ -51,7 +50,7 @@ public class CreatureIsVisible : MonoBehaviour
                 }
             }
         }
-        else if (!m_Renderer.isVisible)
+        else if (!m_Renderer.isVisible && Physics.Linecast(Camera.main.transform.position, transform.position))
         {
             if (PlayerScript.health >= 75)
             {
