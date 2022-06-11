@@ -8,11 +8,11 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
-
-    //Reference to texts when objects are interacted with
     [SerializeField] private GameObject CablePicked;
     [SerializeField] private GameObject GenRestored;
     [SerializeField] private GameObject Light1;
+    [SerializeField] private GameObject PaperGen;
+    [SerializeField] private GameObject PaperGenText;
     [SerializeField] private GameObject GenNoCable;
     [SerializeField] private GameObject WMachineText;
     [SerializeField] private GameObject MicrowaveText;
@@ -23,27 +23,7 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private GameObject FridgeText;
     [SerializeField] private GameObject CarText;
 
-    //Reference to text on papers related to objects
-    [SerializeField] private GameObject PaperGenText;
-    [SerializeField] private GameObject PaperCarText;
-    [SerializeField] private GameObject PaperFridgeText;
-    [SerializeField] private GameObject PaperLaptopText;
-    [SerializeField] private GameObject PaperMicrowaveText;
-    [SerializeField] private GameObject PaperRadioText;
-    [SerializeField] private GameObject PaperTVText;
-    [SerializeField] private GameObject PaperWMachineText;
-
-    //Reference to papers
-    [SerializeField] private GameObject PaperGen;
-    [SerializeField] private GameObject PaperCar;
-    [SerializeField] private GameObject PaperFridge;
-    [SerializeField] private GameObject PaperLaptop;
-    [SerializeField] private GameObject PaperMicrowave;
-    [SerializeField] private GameObject PaperRadio;
-    [SerializeField] private GameObject PaperTV;
-    [SerializeField] private GameObject PaperWMachine;
-
-    private float distPlayerObj;
+    public float distPlayerObj;
 
     private Transform _selection;
     private GameObject PaperGenClone;
@@ -119,7 +99,7 @@ public class SelectionManager : MonoBehaviour
                                 Destroy(Clone2, 3);
                             }
                             
-                            if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false && GameManager.Instance.paperGenRead == true)
+                            if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false)
                             {
                                 CreateEnergy(2000);
                                 //Display text on screen
@@ -169,7 +149,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the washing machine turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperWMachineRead == true)
+                            if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(400);
                                 GameObject Clone2 = Instantiate(WMachineText, new Vector3(0, -316, 0), transform.rotation);
@@ -198,7 +178,6 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone = Instantiate(PaperGenText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
-                                GameManager.Instance.paperGenRead = true;
                             }
                         }
                     }
@@ -214,7 +193,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the TV is turned on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperTVRead == true)
+                            if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(100);
                                 GameObject Clone2 = Instantiate(TVText, new Vector3(0, -316, 0), transform.rotation);
@@ -236,7 +215,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperRadioRead == true)
+                            if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(10);
                                 GameObject Clone2 = Instantiate(RadioText, new Vector3(0, -316, 0), transform.rotation);
@@ -258,7 +237,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the microwave turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperFridgeRead == true)
+                            if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(250);
                                 GameObject Clone2 = Instantiate(FridgeText, new Vector3(0, -316, 0), transform.rotation);
@@ -280,7 +259,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperMicrowaveRead == true)
+                            if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(600);
                                 GameObject Clone2 = Instantiate(MicrowaveText, new Vector3(0, -316, 0), transform.rotation);
@@ -302,7 +281,7 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperLaptopRead == true)
+                            if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(100);
                                 GameObject Clone2 = Instantiate(LaptopText, new Vector3(0, -316, 0), transform.rotation);
@@ -346,174 +325,13 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
-                            if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperCarRead == true)
+                            if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(100);
                                 GameObject Clone2 = Instantiate(CarText, new Vector3(0, -316, 0), transform.rotation);
                                 Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone2, 3);
                                 GameManager.Instance.carOn = true;
-                            }
-                        }
-                    }
-                }
-                //Check if you interact with a paper
-                if (hit.transform.gameObject.name == "PaperCar")
-                {
-                    var selectionRenderer = selection.GetComponent<Renderer>();
-                    if (selectionRenderer != null)
-                    {
-                        //Highlight the object yellow
-                        selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
-                        if (Input.GetKeyDown("e"))
-                        {
-                            if (GameManager.Instance.paperRead == false)
-                            {
-                                PaperGenClone = Instantiate(PaperCar, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
-                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
-                                PaperGenTextClone = Instantiate(PaperCarText, new Vector3(0, 0, 0), transform.rotation);
-                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                GameManager.Instance.paperRead = true;
-                                GameManager.Instance.paperCarRead = true;
-                            }
-                        }
-                    }
-                }
-                //Check if you interact with a paper
-                if (hit.transform.gameObject.name == "PaperFridge")
-                {
-                    var selectionRenderer = selection.GetComponent<Renderer>();
-                    if (selectionRenderer != null)
-                    {
-                        //Highlight the object yellow
-                        selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
-                        if (Input.GetKeyDown("e"))
-                        {
-                            if (GameManager.Instance.paperRead == false)
-                            {
-                                PaperGenClone = Instantiate(PaperFridge, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
-                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
-                                PaperGenTextClone = Instantiate(PaperFridgeText, new Vector3(0, 0, 0), transform.rotation);
-                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                GameManager.Instance.paperRead = true;
-                                GameManager.Instance.paperFridgeRead = true;
-                            }
-                        }
-                    }
-                }
-                //Check if you interact with a paper
-                if (hit.transform.gameObject.name == "PaperLaptop")
-                {
-                    var selectionRenderer = selection.GetComponent<Renderer>();
-                    if (selectionRenderer != null)
-                    {
-                        //Highlight the object yellow
-                        selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
-                        if (Input.GetKeyDown("e"))
-                        {
-                            if (GameManager.Instance.paperRead == false)
-                            {
-                                PaperGenClone = Instantiate(PaperLaptop, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
-                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
-                                PaperGenTextClone = Instantiate(PaperLaptopText, new Vector3(0, 0, 0), transform.rotation);
-                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                GameManager.Instance.paperRead = true;
-                                GameManager.Instance.paperLaptopRead = true;
-                            }
-                        }
-                    }
-                }
-                //Check if you interact with a paper
-                if (hit.transform.gameObject.name == "PaperMicrowave")
-                {
-                    var selectionRenderer = selection.GetComponent<Renderer>();
-                    if (selectionRenderer != null)
-                    {
-                        //Highlight the object yellow
-                        selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
-                        if (Input.GetKeyDown("e"))
-                        {
-                            if (GameManager.Instance.paperRead == false)
-                            {
-                                PaperGenClone = Instantiate(PaperMicrowave, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
-                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
-                                PaperGenTextClone = Instantiate(PaperMicrowave, new Vector3(0, 0, 0), transform.rotation);
-                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                GameManager.Instance.paperRead = true;
-                                GameManager.Instance.paperMicrowaveRead = true;
-                            }
-                        }
-                    }
-                }
-                //Check if you interact with a paper
-                if (hit.transform.gameObject.name == "PaperRadio")
-                {
-                    var selectionRenderer = selection.GetComponent<Renderer>();
-                    if (selectionRenderer != null)
-                    {
-                        //Highlight the object yellow
-                        selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
-                        if (Input.GetKeyDown("e"))
-                        {
-                            if (GameManager.Instance.paperRead == false)
-                            {
-                                PaperGenClone = Instantiate(PaperRadio, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
-                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
-                                PaperGenTextClone = Instantiate(PaperRadioText, new Vector3(0, 0, 0), transform.rotation);
-                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                GameManager.Instance.paperRead = true;
-                                GameManager.Instance.paperRadioRead = true;
-                            }
-                        }
-                    }
-                }
-                //Check if you interact with a paper
-                if (hit.transform.gameObject.name == "PaperTV")
-                {
-                    var selectionRenderer = selection.GetComponent<Renderer>();
-                    if (selectionRenderer != null)
-                    {
-                        //Highlight the object yellow
-                        selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
-                        if (Input.GetKeyDown("e"))
-                        {
-                            if (GameManager.Instance.paperRead == false)
-                            {
-                                PaperGenClone = Instantiate(PaperTV, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
-                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
-                                PaperGenTextClone = Instantiate(PaperTVText, new Vector3(0, 0, 0), transform.rotation);
-                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                GameManager.Instance.paperRead = true;
-                                GameManager.Instance.paperTVRead = true;
-                            }
-                        }
-                    }
-                }
-                //Check if you interact with a paper
-                if (hit.transform.gameObject.name == "PaperWMachine")
-                {
-                    var selectionRenderer = selection.GetComponent<Renderer>();
-                    if (selectionRenderer != null)
-                    {
-                        //Highlight the object yellow
-                        selectionRenderer.material = highlightMaterial;
-                        //When E is pressed the paper is picked up and showed first person
-                        if (Input.GetKeyDown("e"))
-                        {
-                            if (GameManager.Instance.paperRead == false)
-                            {
-                                PaperGenClone = Instantiate(PaperWMachine, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
-                                PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
-                                PaperGenTextClone = Instantiate(PaperWMachineText, new Vector3(0, 0, 0), transform.rotation);
-                                PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                GameManager.Instance.paperRead = true;
-                                GameManager.Instance.paperWMachineRead = true;
                             }
                         }
                     }
