@@ -441,7 +441,7 @@ public class SelectionManager : MonoBehaviour
                             {
                                 PaperGenClone = Instantiate(PaperMicrowave, new Vector3(0.22f, 0.15f, 0.778f), new Quaternion(-250.297f, -240f, -45.60501f, 0));
                                 PaperGenClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCamera").transform, false);
-                                PaperGenTextClone = Instantiate(PaperMicrowave, new Vector3(0, 0, 0), transform.rotation);
+                                PaperGenTextClone = Instantiate(PaperMicrowaveText, new Vector3(0, 0, 0), transform.rotation);
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperMicrowaveRead = true;
