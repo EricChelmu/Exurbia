@@ -17,6 +17,14 @@ public class GameManager : MonoBehaviour
     public bool fridgeOn = false;
     public bool breakerBoxOn = false;
     public bool carOn = false;
+    public bool paperGenRead = false;
+    public bool paperCarRead = false;
+    public bool paperFridgeRead = false;
+    public bool paperLaptopRead = false;
+    public bool paperMicrowaveRead = false;
+    public bool paperRadioRead = false;
+    public bool paperTVRead = false;
+    public bool paperWMachineRead = false;
     [SerializeField] private GameObject Player;
 
     void Start()
