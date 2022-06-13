@@ -7206,6 +7206,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3077830312668816355, guid: d650da4dba9869a49b4fb23addcbe487, type: 3}
+--- !u!1 &592393621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1572971689067595538, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+  m_PrefabInstance: {fileID: 792895102}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &592393625
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592393621}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6894428203817054813, guid: c54ca5bd3b08e514db6154ff5ae3438c, type: 3}
 --- !u!1001 &594597708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13713,6 +13732,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b79aff8d87b0a2e498d90697cc7f9919, type: 3}
   m_PrefabInstance: {fileID: 1565634522}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1117675414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 419522387261237616, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+  m_PrefabInstance: {fileID: 792895102}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1117675418
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117675414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6349497404779363362, guid: c54ca5bd3b08e514db6154ff5ae3438c, type: 3}
 --- !u!4 &1134954368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b79aff8d87b0a2e498d90697cc7f9919, type: 3}
@@ -19551,7 +19589,7 @@ MonoBehaviour:
   upperLookLimit: 80.1
   lowerLookLimit: 80.1
   jumpForce: 8.1
-  gravity: 15
+  gravity: 30.56
   crouchHeight: 1.12
   standingHeight: 2.26
   timeToCrouch: 0.26
@@ -23582,6 +23620,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e6580b47649174245affb1417e858891, type: 3}
   m_PrefabInstance: {fileID: 2026916791}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1940191157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1810785211389728387, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+  m_PrefabInstance: {fileID: 792895102}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1940191161
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940191157}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -470067213634067786, guid: c54ca5bd3b08e514db6154ff5ae3438c, type: 3}
 --- !u!4 &1940268689 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36f62468181350448a3b967e56b7ff9b, type: 3}
