@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Creature: {fileID: 5535376693432826093}
+  PlayerLocation: {fileID: 5237756703677786415, guid: 9c1f7d7dca41e9a46bc2897bd6cc016b, type: 3}
   PlayerScript: {fileID: 0}
 --- !u!1 &9040535824043625886
 GameObject:

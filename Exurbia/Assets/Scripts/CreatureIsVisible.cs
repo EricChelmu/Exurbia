@@ -11,9 +11,9 @@ public class CreatureIsVisible : MonoBehaviour
     Renderer m_Renderer;
     CanvasGroup fadeAlpha;
     private float fadeSpeed = 0.007f;
-    private float playerX;
-    private float playerY;
-    private float playerZ;
+    private float playerPosX;
+    private float playerPosY;
+    private float playerPosZ;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +24,9 @@ public class CreatureIsVisible : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        playerX = PlayerScript.transform.position.x + 2;
-        playerY = PlayerScript.transform.position.y;
-        playerZ = PlayerScript.transform.position.z + 2;
-        Debug.Log(PlayerScript.health);
-        Debug.Log(fadeAlpha.alpha);
+        playerPosX = PlayerScript.transform.position.x + 2;
+        playerPosY = PlayerScript.transform.position.y;
+        playerPosZ = PlayerScript.transform.position.z + 2;
         if (m_Renderer.isVisible && !Physics.Linecast(Camera.main.transform.position, transform.position))
         {
             //transform.rotation = PlayerScript.transform.rotation;
@@ -40,7 +38,7 @@ public class CreatureIsVisible : MonoBehaviour
                 fadeAlpha.alpha += fadeSpeed;
                 if (PlayerScript.health >= 190)
                 {
-                    Creature.transform.position = new Vector3(playerX, playerY, playerZ);
+                    Creature.transform.position = new Vector3(playerPosX, playerPosY, playerPosZ);
                     Creature.transform.rotation = Camera.main.transform.rotation;
                 }
                 if (PlayerScript.health >= 200)

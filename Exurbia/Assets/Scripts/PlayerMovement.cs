@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         GameObject creatureSpawnerObject = GameObject.FindWithTag("CreatureSpawner");
         if (creatureSpawnerObject != null)
         {
-            CreatureBehaviour spawnControllerScript = creatureSpawnerObject.GetComponent<CreatureBehaviour>();
+            CreatureSpawner spawnControllerScript = creatureSpawnerObject.GetComponent<CreatureSpawner>();
             if (spawnControllerScript != null)
             {
                 spawnControllerScript.PlayerScript = this;
