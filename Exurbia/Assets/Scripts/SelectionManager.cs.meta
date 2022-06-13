@@ -3,7 +3,39 @@ guid: 6f7eb003ffa9a8642a740ce60cc2911f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - highlightMaterial: {instanceID: 0}
+  - defaultMaterial: {instanceID: 0}
+  - CablePicked: {instanceID: 0}
+  - GenRestored: {instanceID: 0}
+  - Light1: {instanceID: 0}
+  - GenNoCable: {instanceID: 0}
+  - WMachineText: {instanceID: 0}
+  - MicrowaveText: {instanceID: 0}
+  - TVText: {instanceID: 0}
+  - LaptopText: {instanceID: 0}
+  - RadioText: {instanceID: 0}
+  - BreakerBoxText: {instanceID: 0}
+  - FridgeText: {instanceID: 0}
+  - CarText: {instanceID: 0}
+  - PaperGenText: {instanceID: 0}
+  - PaperCarText: {instanceID: 0}
+  - PaperFridgeText: {instanceID: 0}
+  - PaperLaptopText: {instanceID: 0}
+  - PaperMicrowaveText: {instanceID: 0}
+  - PaperRadioText: {instanceID: 0}
+  - PaperTVText: {instanceID: 0}
+  - PaperWMachineText: {instanceID: 0}
+  - PaperGen: {instanceID: 0}
+  - PaperCar: {instanceID: 0}
+  - PaperFridge: {instanceID: 0}
+  - PaperLaptop: {instanceID: 0}
+  - PaperMicrowave: {instanceID: 0}
+  - PaperRadio: {instanceID: 0}
+  - PaperTV: {instanceID: 0}
+  - PaperWMachine: {instanceID: 0}
+  - PlayerScript: {instanceID: 0}
+  - LightScript: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
