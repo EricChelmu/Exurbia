@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public bool fridgeOn = false;
     public bool breakerBoxOn = false;
     public bool carOn = false;
+    public bool radioTowerOn = false;
     public bool paperGenRead = false;
     public bool paperCarRead = false;
     public bool paperFridgeRead = false;

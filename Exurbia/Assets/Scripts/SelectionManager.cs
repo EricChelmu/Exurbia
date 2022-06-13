@@ -358,6 +358,28 @@ public class SelectionManager : MonoBehaviour
                         }
                     }
                 }
+                //Check if you interact with the Radio Tower
+                if (hit.transform.gameObject.name == "RadioTower")
+                {
+                    var selectionRenderer = selection.GetComponent<Renderer>();
+                    if (selectionRenderer != null)
+                    {
+                        //Highlight the object yellow
+                        selectionRenderer.material = highlightMaterial;
+                        //When E is pressed the radio turns on/off
+                        if (Input.GetKeyDown("e"))
+                        {
+                            if (GameManager.Instance.radioTowerOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.WMachineOn == true && GameManager.Instance.carOn == true && GameManager.Instance.laptopOn == true && GameManager.Instance.fridgeOn == true && GameManager.Instance.microwaveOn == true && GameManager.Instance.radioOn == true && GameManager.Instance.tvOn == true)
+                            {
+                                ReduceEnergy(100);
+                                GameObject Clone2 = Instantiate(CarText, new Vector3(0, -316, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, 3);
+                                GameManager.Instance.radioTowerOn = true;
+                            }
+                        }
+                    }
+                }
                 //Check if you interact with a paper
                 if (hit.transform.gameObject.name == "PaperCar")
                 {
