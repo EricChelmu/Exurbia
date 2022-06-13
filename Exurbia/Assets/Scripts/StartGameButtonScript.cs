@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGameButtonScript : MonoBehaviour
+public class MainMenuButton : MonoBehaviour
+
 {
-    // Start is called before the first frame update
-    public void Start_Game_Button()
+    public void Restart_Button()
     {
-        
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        SceneManager.LoadScene(0);
         Debug.Log("next scene");
     }
 }
