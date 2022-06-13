@@ -1572,10 +1572,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5736692712548119830, guid: 37622cab5d4fe7a45b8fb4685f89fcb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45bab8c8de69feb4fa0ad95630030099, type: 2}
     - target: {fileID: 919132149155446097, guid: 37622cab5d4fe7a45b8fb4685f89fcb2, type: 3}
       propertyPath: m_Name
       value: TexturedDoor2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9077926073120308842, guid: 37622cab5d4fe7a45b8fb4685f89fcb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4991c3f3a0da3914e84176c39dde9f7b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37622cab5d4fe7a45b8fb4685f89fcb2, type: 3}
 --- !u!1001 &105516113
@@ -28369,6 +28377,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5736692712548119830, guid: 37622cab5d4fe7a45b8fb4685f89fcb2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45bab8c8de69feb4fa0ad95630030099, type: 2}
     - target: {fileID: 919132149155446097, guid: 37622cab5d4fe7a45b8fb4685f89fcb2, type: 3}
       propertyPath: m_Name
       value: TexturedDoor2
