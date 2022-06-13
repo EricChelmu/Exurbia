@@ -80,4 +80,5 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\tThe most common generator used by households generates anywhere between
     1 to 10 kWh of power, which is 1000-10000 watts. In order to repair the radio
-    tower, you need to fix the generator. Find it."
+    tower, you need to fix the generator. Find the generator, and the cables to repair
+    it."

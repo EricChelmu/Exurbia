@@ -3121,6 +3121,46 @@ MonoBehaviour:
   PaperRadio: {fileID: 533191581272061342, guid: 628de1049b9e3fc4b88563617e83ee0a, type: 3}
   PaperTV: {fileID: 2575672185387132499, guid: ab2c30b817efb5b4c8450c05dcaf84c8, type: 3}
   PaperWMachine: {fileID: 8257285803231080834, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
+  GenButton1: {fileID: 8792635050005578756, guid: 01903f62d344ea74fa7f39b6b7553827, type: 3}
+  GenButton2Right: {fileID: 239366581764695730, guid: 106e5c60174ef2d49b575e3290a57f65, type: 3}
+  GenButton3: {fileID: 2807277922096011026, guid: 952cd1ca461ae6e4dbf56eb875f14200, type: 3}
+  GenButton4: {fileID: 142027768813054880, guid: 0d5bc82f044fdf64399481901f8c41e3, type: 3}
+  WMachineButton1: {fileID: 2078788866768375140, guid: 4870bb514fd0b5a4e905b6e64eb1495a, type: 3}
+  WMachineButton2: {fileID: 4521411334471456907, guid: a2a6a1fc574fad943a87b1c0ceaed899, type: 3}
+  WMachineButton3: {fileID: 1213789716254769188, guid: b853f979ac516b5418164c111e9d8bf0, type: 3}
+  WMachineButton4Right: {fileID: 3345613832280652839, guid: 7795c50d38b255c44845ab6646bf444d, type: 3}
+  MicrowaveButton1Right: {fileID: 1252906460568257946, guid: de0e2c429c8ebe44d8e3794b9812a2dc, type: 3}
+  MicrowaveButton2: {fileID: 3734749409329598018, guid: 27a13fcd3daf9aa4f89258921e1165c0, type: 3}
+  MicrowaveButton3: {fileID: 8187329645859350495, guid: c1e2b3c8672f88342aa54506d73bc072, type: 3}
+  MicrowaveButton4: {fileID: 6120280296573589591, guid: a30abd9a7ddea0344a4db20521b0a5c3, type: 3}
+  TVButton1: {fileID: 24268883273662443, guid: 6fbbb7eb328e31941b3768486e78cd67, type: 3}
+  TVButton2: {fileID: 5831416829290694318, guid: e5ac371d057e9c943b6be72570deb0bd, type: 3}
+  TVButton3Right: {fileID: 7055953430599255112, guid: 6d5ba749c8af77e43b04001779357a0f, type: 3}
+  TVButton4: {fileID: 2597832358925457561, guid: e347853d68c625140ad50867fb41757a, type: 3}
+  LaptopButton1: {fileID: 7296618923875538896, guid: 8ff2934eed7d4db4cafb3bcae168eec8, type: 3}
+  LaptopButton2: {fileID: 5217485846117960926, guid: 43d05ebec62156542a2a24968586aee7, type: 3}
+  LaptopButton3: {fileID: 2855950141137010168, guid: 05f8d6e593d0c9f4b94f4435a920a203, type: 3}
+  LaptopButton4Right: {fileID: 8181697074390075239, guid: abb6b570a08f76e4a8da197bfec45b60, type: 3}
+  FridgeButton1Right: {fileID: 5653634447124348890, guid: 00a4db361130bc24b90fea49a8b5e161, type: 3}
+  FridgeButton2: {fileID: 49460011015908096, guid: 5ad6d73cf3c2a184cb2dedc29d331dbc, type: 3}
+  FridgeButton3: {fileID: 1753967221229525140, guid: e9178d5123d27944ab570015007c1df2, type: 3}
+  FridgeButton4: {fileID: 6700771573184538508, guid: 1e40d42e3789c804eb8940be04f189c3, type: 3}
+  RadioButton1: {fileID: 5179715365107852141, guid: 033916573f986204a967cecfeefce69a, type: 3}
+  RadioButton2Right: {fileID: 110953016850869037, guid: 3a1750b72adf54a4596592400d8b4c42, type: 3}
+  RadioButton3: {fileID: 2662117018415305761, guid: 0da96a09fa20ac44299e14c1b9b4bb0a, type: 3}
+  RadioButton4: {fileID: 2820245527709604091, guid: d6a3c8b3ae56d904dab8c378a32e6d82, type: 3}
+  CarButton1: {fileID: 7099981185751101269, guid: 328e79fd2beb80f49ae1cf278c5175e3, type: 3}
+  CarButton2: {fileID: 204063440241528311, guid: d917344038a80ea43ba509cdeb534056, type: 3}
+  CarButton3Right: {fileID: 750558339440642897, guid: abb5a494075985049871fdd83ee908f1, type: 3}
+  CarButton4: {fileID: 1788492563524555827, guid: ab8d463c224e04f46924ecc10378b536, type: 3}
+  GenQuestion: {fileID: 3037178383997530846, guid: 2a4f918fd1728664481b11a93f3bcaed, type: 3}
+  WMachineQuestion: {fileID: 6555687629197330734, guid: 950de2a25217a974aac577c8f3311c68, type: 3}
+  MicrowaveQuestion: {fileID: 5555264323029596852, guid: e3a1200783aa2a04eb6fb70ad35d88b4, type: 3}
+  TVQuestion: {fileID: 5081455222397451471, guid: 1cff61ea9b8b99a49929f51abd7a92fa, type: 3}
+  LaptopQuestion: {fileID: 5618518352247403929, guid: 7d5ad6388de38ab4e8b6f0dc0665e59f, type: 3}
+  FridgeQuestion: {fileID: 8659434068419472101, guid: 360dfa99efbad244eb3163babaa005dd, type: 3}
+  RadioQuestion: {fileID: 377168781908630536, guid: 82cabe5774286f5448f9825778524fc0, type: 3}
+  CarQuestion: {fileID: 8815553564571059550, guid: 5873590c82bcad949955fd7784a76cac, type: 3}
   PlayerScript: {fileID: 0}
   LightScript: {fileID: 0}
 --- !u!4 &224236454 stripped
@@ -26516,8 +26556,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_SizeDelta: {x: 0.00012207, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2208031138240771934
 CanvasRenderer:

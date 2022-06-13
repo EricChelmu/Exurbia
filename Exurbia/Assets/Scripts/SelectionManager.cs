@@ -43,6 +43,50 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private GameObject PaperTV;
     [SerializeField] private GameObject PaperWMachine;
 
+    //Buttons & Questions
+    [SerializeField] private GameObject GenButton1;
+    [SerializeField] private GameObject GenButton2Right;
+    [SerializeField] private GameObject GenButton3;
+    [SerializeField] private GameObject GenButton4;
+    [SerializeField] private GameObject WMachineButton1;
+    [SerializeField] private GameObject WMachineButton2;
+    [SerializeField] private GameObject WMachineButton3;
+    [SerializeField] private GameObject WMachineButton4Right;
+    [SerializeField] private GameObject MicrowaveButton1Right;
+    [SerializeField] private GameObject MicrowaveButton2;
+    [SerializeField] private GameObject MicrowaveButton3;
+    [SerializeField] private GameObject MicrowaveButton4;
+    [SerializeField] private GameObject TVButton1;
+    [SerializeField] private GameObject TVButton2;
+    [SerializeField] private GameObject TVButton3Right;
+    [SerializeField] private GameObject TVButton4;
+    [SerializeField] private GameObject LaptopButton1;
+    [SerializeField] private GameObject LaptopButton2;
+    [SerializeField] private GameObject LaptopButton3;
+    [SerializeField] private GameObject LaptopButton4Right;
+    [SerializeField] private GameObject FridgeButton1Right;
+    [SerializeField] private GameObject FridgeButton2;
+    [SerializeField] private GameObject FridgeButton3;
+    [SerializeField] private GameObject FridgeButton4;
+    [SerializeField] private GameObject RadioButton1;
+    [SerializeField] private GameObject RadioButton2Right;
+    [SerializeField] private GameObject RadioButton3;
+    [SerializeField] private GameObject RadioButton4;
+    [SerializeField] private GameObject CarButton1;
+    [SerializeField] private GameObject CarButton2;
+    [SerializeField] private GameObject CarButton3Right;
+    [SerializeField] private GameObject CarButton4;
+    [SerializeField] private GameObject GenQuestion;
+    [SerializeField] private GameObject WMachineQuestion;
+    [SerializeField] private GameObject MicrowaveQuestion;
+    [SerializeField] private GameObject TVQuestion;
+    [SerializeField] private GameObject LaptopQuestion;
+    [SerializeField] private GameObject FridgeQuestion;
+    [SerializeField] private GameObject RadioQuestion;
+    [SerializeField] private GameObject CarQuestion;
+
+
+
     private float distPlayerObj;
 
     private Transform _selection;
@@ -53,7 +97,7 @@ public class SelectionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Button GenButton1comp = GenButton1.GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -111,22 +155,68 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the generator gets repaired and it produces energy
                         if (Input.GetKeyDown("e"))
                         {
-                            //Fix generator by having cables
+                            //If interacted with without cable
                             if (GameManager.Instance.cablePicked == false && GameManager.Instance.generatorOn == false)
                             {
                                 GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -316, 0), transform.rotation);
                                 Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone2, 3);
                             }
-                            
+
+                            //Start quiz if cable was picked and paper was read
                             if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false && GameManager.Instance.paperGenRead == true)
                             {
-                                CreateEnergy(2000);
-                                //Display text on screen
-                                GameObject Clone2 = Instantiate(GenRestored, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
-                                GameManager.Instance.generatorOn = true;
+                                GameObject ButtonClone1 = Instantiate(GenButton1, new Vector3(-319, -192, 0), transform.rotation);
+                                ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone2 = Instantiate(GenButton2Right, new Vector3(394, -192, 0), transform.rotation);
+                                ButtonClone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone3 = Instantiate(GenButton3, new Vector3(-319, -387, 0), transform.rotation);
+                                ButtonClone3.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone4 = Instantiate(GenButton4, new Vector3(394, -387, 0), transform.rotation);
+                                ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject QuestionClone = Instantiate(GenQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
+                                QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+
+                                Button GenButton2RightComp = ButtonClone2.GetComponent<Button>();
+                                GenButton2RightComp.onClick.AddListener(runGenerator);
+                                Button GenButton1Comp = ButtonClone1.GetComponent<Button>();
+                                GenButton1Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton3Comp = ButtonClone3.GetComponent<Button>();
+                                GenButton3Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton4Comp = ButtonClone4.GetComponent<Button>();
+                                GenButton4Comp.onClick.AddListener(quitQuiz);
+
+
+                                void quitQuiz()
+                                {
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
+
+                                void runGenerator()
+                                {
+                                    CreateEnergy(2000);
+                                    //Display text on screen
+                                    GameObject Clone2 = Instantiate(GenRestored, new Vector3(0, -316, 0), transform.rotation);
+                                    Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                    Destroy(Clone2, 3);
+                                    GameManager.Instance.generatorOn = true;
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
                             }
                         }
                     }
@@ -171,11 +261,57 @@ public class SelectionManager : MonoBehaviour
                         {
                             if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperWMachineRead == true)
                             {
-                                ReduceEnergy(400);
-                                GameObject Clone2 = Instantiate(WMachineText, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
-                                GameManager.Instance.WMachineOn = true;
+                                GameObject ButtonClone1 = Instantiate(WMachineButton1, new Vector3(-319, -192, 0), transform.rotation);
+                                ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone2 = Instantiate(WMachineButton2, new Vector3(394, -192, 0), transform.rotation);
+                                ButtonClone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone3 = Instantiate(WMachineButton3, new Vector3(-319, -387, 0), transform.rotation);
+                                ButtonClone3.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone4 = Instantiate(WMachineButton4Right, new Vector3(394, -387, 0), transform.rotation);
+                                ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject QuestionClone = Instantiate(WMachineQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
+                                QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+
+                                
+                                Button GenButton1Comp = ButtonClone1.GetComponent<Button>();
+                                GenButton1Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton2Comp = ButtonClone2.GetComponent<Button>();
+                                GenButton2Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton3Comp = ButtonClone3.GetComponent<Button>();
+                                GenButton3Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton4RightComp = ButtonClone4.GetComponent<Button>();
+                                GenButton4RightComp.onClick.AddListener(runWMachine);
+
+
+                                void quitQuiz()
+                                {
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
+
+                                void runWMachine()
+                                {
+                                    ReduceEnergy(400);
+                                    GameObject Clone2 = Instantiate(WMachineText, new Vector3(0, -316, 0), transform.rotation);
+                                    Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                    Destroy(Clone2, 3);
+                                    GameManager.Instance.WMachineOn = true;
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
                             }
                         }
                     }
@@ -216,11 +352,56 @@ public class SelectionManager : MonoBehaviour
                         {
                             if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperTVRead == true)
                             {
-                                ReduceEnergy(100);
-                                GameObject Clone2 = Instantiate(TVText, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
-                                GameManager.Instance.tvOn = true;
+                                GameObject ButtonClone1 = Instantiate(TVButton1, new Vector3(-319, -192, 0), transform.rotation);
+                                ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone2 = Instantiate(TVButton2, new Vector3(394, -192, 0), transform.rotation);
+                                ButtonClone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone3 = Instantiate(TVButton3Right, new Vector3(-319, -387, 0), transform.rotation);
+                                ButtonClone3.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone4 = Instantiate(TVButton4, new Vector3(394, -387, 0), transform.rotation);
+                                ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject QuestionClone = Instantiate(TVQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
+                                QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+
+                                Button GenButton1Comp = ButtonClone1.GetComponent<Button>();
+                                GenButton1Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton2Comp = ButtonClone2.GetComponent<Button>();
+                                GenButton2Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton3CompRight = ButtonClone3.GetComponent<Button>();
+                                GenButton3CompRight.onClick.AddListener(runTV);
+                                Button GenButton4Comp = ButtonClone4.GetComponent<Button>();
+                                GenButton4Comp.onClick.AddListener(quitQuiz);
+
+
+                                void quitQuiz()
+                                {
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
+
+                                void runTV()
+                                {
+                                    ReduceEnergy(100);
+                                    GameObject Clone2 = Instantiate(TVText, new Vector3(0, -316, 0), transform.rotation);
+                                    Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                    Destroy(Clone2, 3);
+                                    GameManager.Instance.tvOn = true;
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
                             }
                         }
                     }
@@ -238,11 +419,56 @@ public class SelectionManager : MonoBehaviour
                         {
                             if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperRadioRead == true)
                             {
-                                ReduceEnergy(10);
-                                GameObject Clone2 = Instantiate(RadioText, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
-                                GameManager.Instance.radioOn = true;
+                                GameObject ButtonClone1 = Instantiate(RadioButton1, new Vector3(-319, -192, 0), transform.rotation);
+                                ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone2 = Instantiate(RadioButton2Right, new Vector3(394, -192, 0), transform.rotation);
+                                ButtonClone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone3 = Instantiate(RadioButton3, new Vector3(-319, -387, 0), transform.rotation);
+                                ButtonClone3.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone4 = Instantiate(RadioButton4, new Vector3(394, -387, 0), transform.rotation);
+                                ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject QuestionClone = Instantiate(RadioQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
+                                QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+
+                                Button GenButton1Comp = ButtonClone1.GetComponent<Button>();
+                                GenButton1Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton2CompRight = ButtonClone2.GetComponent<Button>();
+                                GenButton2CompRight.onClick.AddListener(runRadio);
+                                Button GenButton3Comp = ButtonClone3.GetComponent<Button>();
+                                GenButton3Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton4Comp = ButtonClone4.GetComponent<Button>();
+                                GenButton4Comp.onClick.AddListener(quitQuiz);
+
+
+                                void quitQuiz()
+                                {
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
+
+                                void runRadio()
+                                {
+                                    ReduceEnergy(10);
+                                    GameObject Clone2 = Instantiate(RadioText, new Vector3(0, -316, 0), transform.rotation);
+                                    Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                    Destroy(Clone2, 3);
+                                    GameManager.Instance.radioOn = true;
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
                             }
                         }
                     }
@@ -260,11 +486,56 @@ public class SelectionManager : MonoBehaviour
                         {
                             if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperFridgeRead == true)
                             {
-                                ReduceEnergy(250);
-                                GameObject Clone2 = Instantiate(FridgeText, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
-                                GameManager.Instance.fridgeOn = true;
+                                GameObject ButtonClone1 = Instantiate(FridgeButton1Right, new Vector3(-319, -192, 0), transform.rotation);
+                                ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone2 = Instantiate(FridgeButton2, new Vector3(394, -192, 0), transform.rotation);
+                                ButtonClone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone3 = Instantiate(FridgeButton3, new Vector3(-319, -387, 0), transform.rotation);
+                                ButtonClone3.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone4 = Instantiate(FridgeButton4, new Vector3(394, -387, 0), transform.rotation);
+                                ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject QuestionClone = Instantiate(FridgeQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
+                                QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+
+                                Button GenButton1CompRight = ButtonClone1.GetComponent<Button>();
+                                GenButton1CompRight.onClick.AddListener(runFridge);
+                                Button GenButton2Comp = ButtonClone2.GetComponent<Button>();
+                                GenButton2Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton3Comp = ButtonClone3.GetComponent<Button>();
+                                GenButton3Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton4Comp = ButtonClone4.GetComponent<Button>();
+                                GenButton4Comp.onClick.AddListener(quitQuiz);
+
+
+                                void quitQuiz()
+                                {
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
+
+                                void runFridge()
+                                {
+                                    ReduceEnergy(250);
+                                    GameObject Clone2 = Instantiate(FridgeText, new Vector3(0, -316, 0), transform.rotation);
+                                    Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                    Destroy(Clone2, 3);
+                                    GameManager.Instance.fridgeOn = true;
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
                             }
                         }
                     }
@@ -282,11 +553,56 @@ public class SelectionManager : MonoBehaviour
                         {
                             if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperMicrowaveRead == true)
                             {
-                                ReduceEnergy(600);
-                                GameObject Clone2 = Instantiate(MicrowaveText, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
-                                GameManager.Instance.microwaveOn = true;
+                                GameObject ButtonClone1 = Instantiate(MicrowaveButton1Right, new Vector3(-319, -192, 0), transform.rotation);
+                                ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone2 = Instantiate(MicrowaveButton2, new Vector3(394, -192, 0), transform.rotation);
+                                ButtonClone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone3 = Instantiate(MicrowaveButton3, new Vector3(-319, -387, 0), transform.rotation);
+                                ButtonClone3.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone4 = Instantiate(MicrowaveButton4, new Vector3(394, -387, 0), transform.rotation);
+                                ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject QuestionClone = Instantiate(MicrowaveQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
+                                QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+
+                                Button GenButton1CompRight = ButtonClone1.GetComponent<Button>();
+                                GenButton1CompRight.onClick.AddListener(runMicrowave);
+                                Button GenButton2Comp = ButtonClone2.GetComponent<Button>();
+                                GenButton2Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton3Comp = ButtonClone3.GetComponent<Button>();
+                                GenButton3Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton4Comp = ButtonClone4.GetComponent<Button>();
+                                GenButton4Comp.onClick.AddListener(quitQuiz);
+
+
+                                void quitQuiz()
+                                {
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
+
+                                void runMicrowave()
+                                {
+                                    ReduceEnergy(600);
+                                    GameObject Clone2 = Instantiate(MicrowaveText, new Vector3(0, -316, 0), transform.rotation);
+                                    Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                    Destroy(Clone2, 3);
+                                    GameManager.Instance.microwaveOn = true;
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
                             }
                         }
                     }
@@ -304,11 +620,56 @@ public class SelectionManager : MonoBehaviour
                         {
                             if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperLaptopRead == true)
                             {
-                                ReduceEnergy(100);
-                                GameObject Clone2 = Instantiate(LaptopText, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
-                                GameManager.Instance.laptopOn = true;
+                                GameObject ButtonClone1 = Instantiate(LaptopButton1, new Vector3(-319, -192, 0), transform.rotation);
+                                ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone2 = Instantiate(LaptopButton2, new Vector3(394, -192, 0), transform.rotation);
+                                ButtonClone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone3 = Instantiate(LaptopButton3, new Vector3(-319, -387, 0), transform.rotation);
+                                ButtonClone3.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone4 = Instantiate(LaptopButton4Right, new Vector3(394, -387, 0), transform.rotation);
+                                ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject QuestionClone = Instantiate(LaptopQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
+                                QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+
+                                Button GenButton1Comp = ButtonClone1.GetComponent<Button>();
+                                GenButton1Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton2Comp = ButtonClone2.GetComponent<Button>();
+                                GenButton2Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton3Comp = ButtonClone3.GetComponent<Button>();
+                                GenButton3Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton4CompRight = ButtonClone4.GetComponent<Button>();
+                                GenButton4CompRight.onClick.AddListener(runLaptop);
+
+
+                                void quitQuiz()
+                                {
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
+
+                                void runLaptop()
+                                {
+                                    ReduceEnergy(100);
+                                    GameObject Clone2 = Instantiate(LaptopText, new Vector3(0, -316, 0), transform.rotation);
+                                    Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                    Destroy(Clone2, 3);
+                                    GameManager.Instance.laptopOn = true;
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
                             }
                         }
                     }
@@ -348,11 +709,56 @@ public class SelectionManager : MonoBehaviour
                         {
                             if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperCarRead == true)
                             {
-                                ReduceEnergy(100);
-                                GameObject Clone2 = Instantiate(CarText, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
-                                GameManager.Instance.carOn = true;
+                                GameObject ButtonClone1 = Instantiate(CarButton1, new Vector3(-319, -192, 0), transform.rotation);
+                                ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone2 = Instantiate(CarButton2, new Vector3(394, -192, 0), transform.rotation);
+                                ButtonClone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone3 = Instantiate(CarButton3Right, new Vector3(-319, -387, 0), transform.rotation);
+                                ButtonClone3.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject ButtonClone4 = Instantiate(CarButton4, new Vector3(394, -387, 0), transform.rotation);
+                                ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                GameObject QuestionClone = Instantiate(CarQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
+                                QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
+
+                                Button GenButton1Comp = ButtonClone1.GetComponent<Button>();
+                                GenButton1Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton2Comp = ButtonClone2.GetComponent<Button>();
+                                GenButton2Comp.onClick.AddListener(quitQuiz);
+                                Button GenButton3CompRight = ButtonClone3.GetComponent<Button>();
+                                GenButton3CompRight.onClick.AddListener(runCar);
+                                Button GenButton4Comp = ButtonClone4.GetComponent<Button>();
+                                GenButton4Comp.onClick.AddListener(quitQuiz);
+
+
+                                void quitQuiz()
+                                {
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
+
+                                void runCar()
+                                {
+                                    ReduceEnergy(100);
+                                    GameObject Clone2 = Instantiate(CarText, new Vector3(0, -316, 0), transform.rotation);
+                                    Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                    Destroy(Clone2, 3);
+                                    GameManager.Instance.carOn = true;
+                                    Destroy(ButtonClone1);
+                                    Destroy(ButtonClone2);
+                                    Destroy(ButtonClone3);
+                                    Destroy(ButtonClone4);
+                                    Destroy(QuestionClone);
+                                    Cursor.visible = false;
+                                    Cursor.lockState = CursorLockMode.Locked;
+                                }
                             }
                         }
                     }
