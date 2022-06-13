@@ -98,7 +98,7 @@ public class SelectionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Button GenButton1comp = GenButton1.GetComponent<Button>();
+
     }
 
     // Update is called once per frame
@@ -777,11 +777,10 @@ public class SelectionManager : MonoBehaviour
                         {
                             if (GameManager.Instance.radioTowerOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.WMachineOn == true && GameManager.Instance.carOn == true && GameManager.Instance.laptopOn == true && GameManager.Instance.fridgeOn == true && GameManager.Instance.microwaveOn == true && GameManager.Instance.radioOn == true && GameManager.Instance.tvOn == true)
                             {
-                                ReduceEnergy(100);
-                                GameObject Clone2 = Instantiate(CarText, new Vector3(0, -316, 0), transform.rotation);
-                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
                                 GameManager.Instance.radioTowerOn = true;
+                                SceneManager.LoadScene(4);
+                                Cursor.visible = true;
+                                Cursor.lockState = CursorLockMode.None;
                             }
                         }
                     }

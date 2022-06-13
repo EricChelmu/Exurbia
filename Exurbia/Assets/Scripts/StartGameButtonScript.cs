@@ -8,8 +8,6 @@ public class MainMenuButton : MonoBehaviour
 {
     public void Restart_Button()
     {
-
         SceneManager.LoadScene(0);
-        Debug.Log("next scene");
     }
 }
