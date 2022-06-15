@@ -78,7 +78,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How much power does a TV consume per hour, and how much does it cost?
+  m_Text: How much power does a washing machine consume per hour, and how much does
+    it cost?
 --- !u!1 &6555687629197330734
 GameObject:
   m_ObjectHideFlags: 0

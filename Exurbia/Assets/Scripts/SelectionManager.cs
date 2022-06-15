@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SelectionManager : MonoBehaviour
 {
@@ -82,9 +83,6 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private GameObject RadioQuestion;
     [SerializeField] private GameObject CarQuestion;
 
-
-
-    private float distPlayerObj;
     private Transform _selection;
     private GameObject PaperGenClone;
     private GameObject PaperGenTextClone;
@@ -94,10 +92,13 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
+    [SerializeField] public TMP_Text pageCounter;
+    private int pages = 0;
+    private float distPlayerObj;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -340,6 +341,11 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperGenRead = true;
+                                if (GameManager.Instance.paperGenRead == true)
+                                {
+                                    pages++;
+                                }
+                                pageCounter.text = pages.ToString();
                             }
                         }
                     }
@@ -817,6 +823,11 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperCarRead = true;
+                                if (GameManager.Instance.paperGenRead == true)
+                                {
+                                    pages++;
+                                }
+                                pageCounter.text = pages.ToString();
                             }
                         }
                     }
@@ -841,6 +852,11 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperFridgeRead = true;
+                                if (GameManager.Instance.paperGenRead == true)
+                                {
+                                    pages++;
+                                }
+                                pageCounter.text = pages.ToString();
                             }
                         }
                     }
@@ -865,6 +881,11 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperLaptopRead = true;
+                                if (GameManager.Instance.paperGenRead == true)
+                                {
+                                    pages++;
+                                }
+                                pageCounter.text = pages.ToString();
                             }
                         }
                     }
@@ -889,6 +910,11 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperMicrowaveRead = true;
+                                if (GameManager.Instance.paperGenRead == true)
+                                {
+                                    pages++;
+                                }
+                                pageCounter.text = pages.ToString();
                             }
                         }
                     }
@@ -913,6 +939,11 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperRadioRead = true;
+                                if (GameManager.Instance.paperGenRead == true)
+                                {
+                                    pages++;
+                                }
+                                pageCounter.text = pages.ToString();
                             }
                         }
                     }
@@ -937,6 +968,11 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperTVRead = true;
+                                if (GameManager.Instance.paperGenRead == true)
+                                {
+                                    pages++;
+                                }
+                                pageCounter.text = pages.ToString();
                             }
                         }
                     }
@@ -961,6 +997,11 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperWMachineRead = true;
+                                if (GameManager.Instance.paperGenRead == true)
+                                {
+                                    pages++;
+                                }
+                                pageCounter.text = pages.ToString();
                             }
                         }
                     }
