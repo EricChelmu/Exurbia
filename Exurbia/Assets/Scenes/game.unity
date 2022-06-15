@@ -21916,8 +21916,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3505516248734854058, guid: 2b75d23feb53f854990129ecd5088c79, type: 3}
   m_PrefabInstance: {fileID: 1569520304}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1569520308
-MeshCollider:
+--- !u!65 &1569520308
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21926,12 +21926,11 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7387706064836869012, guid: 3d350242337ce5c43a6a6d1593528cf0, type: 3}
---- !u!64 &1569520309
-MeshCollider:
+  serializedVersion: 2
+  m_Size: {x: 0.02296778, y: 0.02053877, z: 0.054690342}
+  m_Center: {x: -0.001483889, y: -0.00026926477, z: -0.017345166}
+--- !u!65 &1569520309
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21940,12 +21939,11 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2534964839176971238, guid: 3d350242337ce5c43a6a6d1593528cf0, type: 3}
---- !u!64 &1569520310
-MeshCollider:
+  serializedVersion: 2
+  m_Size: {x: 0.02038914, y: 0.020451056, z: 0.044481978}
+  m_Center: {x: 0.00019838181, y: 0.00022361944, z: 0.01224099}
+--- !u!65 &1569520310
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21954,10 +21952,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 150581138598605843, guid: 3d350242337ce5c43a6a6d1593528cf0, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0125918295, y: 0.0051238453, z: 0.00056285516}
+  m_Center: {x: 0.0025783079, y: -0.003998559, z: 0.002809418}
 --- !u!4 &1572829102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4c14c1aa5f699194ab52dc5ec654d4be, type: 3}
@@ -23333,7 +23330,7 @@ MonoBehaviour:
   crouchBobAmount: 0.026
   baseStepSpeed: 0.6
   crouchStepMultiplier: 1.6
-  sprintStepMultiplier: 0.05
+  sprintStepMultiplier: 0.4
   footstepAudioSource: {fileID: 1632467766}
   woodClips:
   - {fileID: 8300000, guid: 93e603b41ed843645ba0544348781c4e, type: 3}
