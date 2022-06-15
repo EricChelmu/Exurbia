@@ -830,8 +830,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Be sure to pick up all the papers the information you will find there
-    will be essential to your success before interacting with any household objects.
-    Find the paper and the generator first.  '
+    will be essential to your success. You need the papers before interacting with
+    any household objects. Find the paper for the generator. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55d6cb0fbdeebcc4dba0ec7de3cd53af, type: 2}
   m_sharedMaterial: {fileID: -352548893097419455, guid: 55d6cb0fbdeebcc4dba0ec7de3cd53af, type: 2}
