@@ -15689,7 +15689,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -22679,9 +22679,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
+      propertyPath: m_Name
+      value: RadioTower
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
       propertyPath: m_Name
       value: radiotower NEW
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800250516343163423, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
+      propertyPath: m_Name
+      value: RadioTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800250516343163423, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849762623622064168, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
+      propertyPath: m_Name
+      value: RadioTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3849762623622064168, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700725330082129686, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
+      propertyPath: m_Name
+      value: RadioTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700725330082129686, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99766fe4e26cbe248bb798b50004a1e9, type: 3}
