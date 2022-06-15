@@ -832,7 +832,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperCarRead = true;
-                                if (GameManager.Instance.paperGenRead == true && alreadyCountedCar == false)
+                                if (GameManager.Instance.paperCarRead == true && alreadyCountedCar == false)
                                 {
                                     alreadyCountedCar = true;
                                     pages++;
@@ -862,7 +862,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperFridgeRead = true;
-                                if (GameManager.Instance.paperGenRead == true && alreadyCountedFridge == false)
+                                if (GameManager.Instance.paperFridgeRead == true && alreadyCountedFridge == false)
                                 {
                                     alreadyCountedFridge = true;
                                     pages++;
@@ -892,7 +892,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperLaptopRead = true;
-                                if (GameManager.Instance.paperGenRead == true && alreadyCountedLaptop == false)
+                                if (GameManager.Instance.paperLaptopRead == true && alreadyCountedLaptop == false)
                                 {
                                     alreadyCountedLaptop = true;
                                     pages++;
@@ -922,7 +922,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperMicrowaveRead = true;
-                                if (GameManager.Instance.paperGenRead == true && alreadyCountedMicrowave == false)
+                                if (GameManager.Instance.paperMicrowaveRead == true && alreadyCountedMicrowave == false)
                                 {
                                     alreadyCountedMicrowave = true;
                                     pages++;
@@ -952,7 +952,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperRadioRead = true;
-                                if (GameManager.Instance.paperGenRead == true && alreadyCountedRadio == false)
+                                if (GameManager.Instance.paperRadioRead == true && alreadyCountedRadio == false)
                                 {
                                     alreadyCountedRadio = true;
                                     pages++;
@@ -982,7 +982,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperTVRead = true;
-                                if (GameManager.Instance.paperGenRead == true && alreadyCountedTV == false)
+                                if (GameManager.Instance.paperTVRead == true && alreadyCountedTV == false)
                                 {
                                     alreadyCountedTV = true;
                                     pages++;
@@ -1012,7 +1012,7 @@ public class SelectionManager : MonoBehaviour
                                 PaperGenTextClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameManager.Instance.paperRead = true;
                                 GameManager.Instance.paperWMachineRead = true;
-                                if (GameManager.Instance.paperGenRead == true && alreadyCountedWMachine == false)
+                                if (GameManager.Instance.paperWMachineRead == true && alreadyCountedWMachine == false)
                                 {
                                     alreadyCountedWMachine = true;
                                     pages++;
