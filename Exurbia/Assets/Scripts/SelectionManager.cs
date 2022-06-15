@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SelectionManager : MonoBehaviour
 {
-    [SerializeField] private string selectableTag = "Selectable";
-    [SerializeField] private Material highlightMaterial;
-    [SerializeField] private Material defaultMaterial;
-
     //Reference to texts when objects are interacted with
     [SerializeField] private GameObject CablePicked;
     [SerializeField] private GameObject GenRestored;
@@ -89,12 +85,15 @@ public class SelectionManager : MonoBehaviour
 
 
     private float distPlayerObj;
-
     private Transform _selection;
     private GameObject PaperGenClone;
     private GameObject PaperGenTextClone;
     public PlayerMovement PlayerScript;
     public LightOffOn LightScript;
+
+    [SerializeField] private string selectableTag = "Selectable";
+    [SerializeField] private Material highlightMaterial;
+    [SerializeField] private Material defaultMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -130,6 +129,7 @@ public class SelectionManager : MonoBehaviour
                 {
                     //Highlight the object yellow
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         selectionRenderer.material = highlightMaterial;
@@ -150,6 +150,7 @@ public class SelectionManager : MonoBehaviour
                 {
                     //Highlight the object yellow
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         selectionRenderer.material = highlightMaterial;
@@ -227,6 +228,7 @@ public class SelectionManager : MonoBehaviour
                 {
                     //Highlight the object yellow
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         selectionRenderer.material = highlightMaterial;
@@ -253,6 +255,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "Washing Machine")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -321,6 +324,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "PaperGen")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -344,6 +348,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "TV")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -411,6 +416,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "Radio")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -478,6 +484,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "Fridge")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -545,6 +552,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "Microwave")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -612,6 +620,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "Laptop")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -679,6 +688,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "Breaker Box")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -701,6 +711,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "Car")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -768,6 +779,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "RadioTower")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -789,6 +801,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "PaperCar")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -812,6 +825,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "PaperFridge")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -835,6 +849,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "PaperLaptop")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -858,6 +873,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "PaperMicrowave")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -881,6 +897,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "PaperRadio")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -904,6 +921,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "PaperTV")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
@@ -927,6 +945,7 @@ public class SelectionManager : MonoBehaviour
                 if (hit.transform.gameObject.name == "PaperWMachine")
                 {
                     var selectionRenderer = selection.GetComponent<Renderer>();
+                    defaultMaterial = selectionRenderer.material;
                     if (selectionRenderer != null)
                     {
                         //Highlight the object yellow
