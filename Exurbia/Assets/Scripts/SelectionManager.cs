@@ -9,6 +9,7 @@ public class SelectionManager : MonoBehaviour
 {
     //Reference to texts when objects are interacted with
     [SerializeField] private GameObject ObjectNoPaper;
+    [SerializeField] private GameObject NoPower;
     [SerializeField] private GameObject CablePicked;
     [SerializeField] private GameObject GenRestored;
     [SerializeField] private GameObject Light1;
@@ -188,6 +189,7 @@ public class SelectionManager : MonoBehaviour
                                 Destroy(Clone2, readTimer);
                             }
 
+
                             //Start quiz if cable was picked and paper was read
                             if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false && GameManager.Instance.paperGenRead == true)
                             {
@@ -233,7 +235,7 @@ public class SelectionManager : MonoBehaviour
                                 {
                                     CreateEnergy(2000);
                                     //Display text on screen
-                                    GameObject Clone2 = Instantiate(GenRestored, new Vector3(0, -316, 0), transform.rotation);
+                                    GameObject Clone2 = Instantiate(GenRestored, new Vector3(0, -709, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                     Destroy(Clone2, 3);
                                     GameManager.Instance.generatorOn = true;
@@ -296,7 +298,14 @@ public class SelectionManager : MonoBehaviour
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone, readTimer);
                             }
-                                
+
+                            if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(NoPower, new Vector3(0, -709, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, readTimer);
+                            }
+
                             if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperWMachineRead == true)
                             
                             {
@@ -341,7 +350,7 @@ public class SelectionManager : MonoBehaviour
                                 void runWMachine()
                                 {
                                     ReduceEnergy(400);
-                                    GameObject Clone2 = Instantiate(WMachineText, new Vector3(0, -316, 0), transform.rotation);
+                                    GameObject Clone2 = Instantiate(WMachineText, new Vector3(0, -709, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                     Destroy(Clone2, readTimer);
                                     GameManager.Instance.WMachineOn = true;
@@ -413,6 +422,13 @@ public class SelectionManager : MonoBehaviour
                                 Destroy(Clone, readTimer);
                             }
 
+                            if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(NoPower, new Vector3(0, -709, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, readTimer);
+                            }
+
                             if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperTVRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(TVButton1, new Vector3(-319, -192, 0), transform.rotation);
@@ -456,7 +472,7 @@ public class SelectionManager : MonoBehaviour
                                 void runTV()
                                 {
                                     ReduceEnergy(100);
-                                    GameObject Clone2 = Instantiate(TVText, new Vector3(0, -316, 0), transform.rotation);
+                                    GameObject Clone2 = Instantiate(TVText, new Vector3(0, -709, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                     Destroy(Clone2, 3);
                                     GameManager.Instance.tvOn = true;
@@ -496,6 +512,13 @@ public class SelectionManager : MonoBehaviour
                                 GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone, readTimer);
+                            }
+
+                            if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(NoPower, new Vector3(0, -709, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, readTimer);
                             }
 
                             if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperRadioRead == true)
@@ -540,7 +563,7 @@ public class SelectionManager : MonoBehaviour
                                 void runRadio()
                                 {
                                     ReduceEnergy(10);
-                                    GameObject Clone2 = Instantiate(RadioText, new Vector3(0, -316, 0), transform.rotation);
+                                    GameObject Clone2 = Instantiate(RadioText, new Vector3(0, -709, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                     Destroy(Clone2, 3);
                                     GameManager.Instance.radioOn = true;
@@ -581,6 +604,14 @@ public class SelectionManager : MonoBehaviour
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone, readTimer);
                             }
+
+                            if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(NoPower, new Vector3(0, -709, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, readTimer);
+                            }
+
                             if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperFridgeRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(FridgeButton1Right, new Vector3(-319, -192, 0), transform.rotation);
@@ -623,7 +654,7 @@ public class SelectionManager : MonoBehaviour
                                 void runFridge()
                                 {
                                     ReduceEnergy(250);
-                                    GameObject Clone2 = Instantiate(FridgeText, new Vector3(0, -316, 0), transform.rotation);
+                                    GameObject Clone2 = Instantiate(FridgeText, new Vector3(0, -709, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                     Destroy(Clone2, 3);
                                     GameManager.Instance.fridgeOn = true;
@@ -664,6 +695,14 @@ public class SelectionManager : MonoBehaviour
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone, readTimer);
                             }
+
+                            if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(NoPower, new Vector3(0, -709, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, readTimer);
+                            }
+
                             if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperMicrowaveRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(MicrowaveButton1Right, new Vector3(-319, -192, 0), transform.rotation);
@@ -706,7 +745,7 @@ public class SelectionManager : MonoBehaviour
                                 void runMicrowave()
                                 {
                                     ReduceEnergy(600);
-                                    GameObject Clone2 = Instantiate(MicrowaveText, new Vector3(0, -316, 0), transform.rotation);
+                                    GameObject Clone2 = Instantiate(MicrowaveText, new Vector3(0, -709, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                     Destroy(Clone2, 3);
                                     GameManager.Instance.microwaveOn = true;
@@ -747,6 +786,14 @@ public class SelectionManager : MonoBehaviour
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone, readTimer);
                             }
+
+                            if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(NoPower, new Vector3(0, -709, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, readTimer);
+                            }
+
                             if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperLaptopRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(LaptopButton1, new Vector3(-319, -192, 0), transform.rotation);
@@ -789,7 +836,7 @@ public class SelectionManager : MonoBehaviour
                                 void runLaptop()
                                 {
                                     ReduceEnergy(100);
-                                    GameObject Clone2 = Instantiate(LaptopText, new Vector3(0, -316, 0), transform.rotation);
+                                    GameObject Clone2 = Instantiate(LaptopText, new Vector3(0, -709, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                     Destroy(Clone2, 3);
                                     GameManager.Instance.laptopOn = true;
@@ -827,7 +874,7 @@ public class SelectionManager : MonoBehaviour
                             if (GameManager.Instance.breakerBoxOn == false && GameManager.Instance.generatorOn == true)
                             {
                                 ReduceEnergy(100);
-                                GameObject Clone2 = Instantiate(BreakerBoxText, new Vector3(0, -316, 0), transform.rotation);
+                                GameObject Clone2 = Instantiate(BreakerBoxText, new Vector3(0, -709, 0), transform.rotation);
                                 Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone2, 3);
                                 GameManager.Instance.breakerBoxOn = true;
@@ -853,6 +900,14 @@ public class SelectionManager : MonoBehaviour
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone, readTimer);
                             }
+
+                            if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == false)
+                            {
+                                GameObject Clone2 = Instantiate(NoPower, new Vector3(0, -709, 0), transform.rotation);
+                                Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone2, readTimer);
+                            }
+
                             if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperCarRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(CarButton1, new Vector3(-319, -192, 0), transform.rotation);
@@ -895,7 +950,7 @@ public class SelectionManager : MonoBehaviour
                                 void runCar()
                                 {
                                     ReduceEnergy(100);
-                                    GameObject Clone2 = Instantiate(CarText, new Vector3(0, -316, 0), transform.rotation);
+                                    GameObject Clone2 = Instantiate(CarText, new Vector3(0, -709, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                     Destroy(Clone2, 3);
                                     GameManager.Instance.carOn = true;
