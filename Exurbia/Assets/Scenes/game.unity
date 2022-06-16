@@ -11037,10 +11037,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.263
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
+      propertyPath: m_Name
+      value: Laptop
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: -7918335002988649766, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 821a1c2dceede6c4e8e41152dcc93947, type: 2}
+    - target: {fileID: -7029948723529949830, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
+      propertyPath: m_Name
+      value: Laptop
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -11053,9 +11069,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 34b0bc34b7cb84247a01c27fa3728284, type: 2}
+    - target: {fileID: -516098083770646512, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
+      propertyPath: m_Name
+      value: Laptop
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
       propertyPath: m_Name
-      value: leptop
+      value: Laptop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 8416272007918961125, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
       propertyPath: m_Name
@@ -12996,43 +13024,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.498
+      value: 50.55
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.321
+      value: 11.12
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.000608
+      value: 9.86
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.00031347875
+      value: -0.7068094
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00028755446
+      value: 0.011448776
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.71687335
+      value: -0.0064752833
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.6972033
+      value: -0.70728177
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -91.594
+      value: -178.548
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.1000061
+      value: -180.404
       objectReference: {fileID: 0}
     - target: {fileID: 8780916587709770552, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -179.949
+      value: -89.957
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b5b6a8c98cbf5a459c884d01b21baf7, type: 3}
@@ -13254,11 +13282,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8793629817927167984, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_Name
-      value: bruh
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: -8793629817927167984, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_RootOrder
@@ -13322,11 +13350,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8aa58a8072c4d844788302d60cb78940, type: 2}
     - target: {fileID: -4288964718377076019, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_Name
-      value: bruh
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: -4288964718377076019, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: -1504512135690388296, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_Name
@@ -13338,19 +13366,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 352274276356378581, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_Name
-      value: bruh
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 352274276356378581, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 699592464891588011, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_Name
-      value: bruh
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 699592464891588011, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Selectable
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 18c5b60cb0a16f1438d219f20043d4b8, type: 3}
       propertyPath: m_Name
@@ -16665,6 +16693,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 323f307ee6b8e554e98d5ad49d21e59a, type: 2}
+    - target: {fileID: 1299803746901129958, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299803746901129958, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 1322899039700376713, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -16673,6 +16709,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4991c3f3a0da3914e84176c39dde9f7b, type: 2}
+    - target: {fileID: 1958195176009942773, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958195176009942773, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 2073850997874859330, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -16865,6 +16909,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 189007491fcfb564b9f47fd78df14be1, type: 2}
+    - target: {fileID: 7428659092332984936, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428659092332984936, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 7439538916671537266, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -16941,10 +16993,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 72e0d19cbd0f073428e35608140111d3, type: 2}
+    - target: {fileID: 8506688079837107847, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506688079837107847, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8555247503916731813, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4991c3f3a0da3914e84176c39dde9f7b, type: 2}
+    - target: {fileID: 8600999592328590835, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600999592328590835, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8646956741042103705, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -16957,6 +17025,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4991c3f3a0da3914e84176c39dde9f7b, type: 2}
+    - target: {fileID: 8797565228804478834, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797565228804478834, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 9014035940581071951, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -37808,6 +37884,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1be907f5b8928bf42b592f3778cd1abc, type: 3}
+--- !u!1 &1732704405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1021059a7040b0d40964ed7aef6d597f, type: 3}
+  m_PrefabInstance: {fileID: 524444025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1732704407
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732704405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &1740142540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1083258463246760984, guid: 58829171fe177454aaf75c72edf4a95e, type: 3}
