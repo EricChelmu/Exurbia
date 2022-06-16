@@ -103,6 +103,7 @@ public class SelectionManager : MonoBehaviour
     bool alreadyCountedRadio = false;
     bool alreadyCountedFridge = false;
     bool alreadyCountedTV = false;
+    bool quizOpen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -131,7 +132,7 @@ public class SelectionManager : MonoBehaviour
         {
             distPlayerObj = Vector3.Distance(PlayerScript.transform.position, hit.transform.position);
             var selection = hit.transform;
-            if (selection.CompareTag(selectableTag) && distPlayerObj <= 7f)
+            if (selection.CompareTag(selectableTag) && distPlayerObj <= 7f && quizOpen == false)
             {
                 //Check if you pick up a cable
                 if (hit.transform.gameObject.name == "Cable")
@@ -187,10 +188,11 @@ public class SelectionManager : MonoBehaviour
                                 ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject QuestionClone = Instantiate(GenQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
                                 QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                quizOpen = true;
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
-
+                                
                                 Button GenButton2RightComp = ButtonClone2.GetComponent<Button>();
                                 GenButton2RightComp.onClick.AddListener(runGenerator);
                                 Button GenButton1Comp = ButtonClone1.GetComponent<Button>();
@@ -203,6 +205,7 @@ public class SelectionManager : MonoBehaviour
 
                                 void quitQuiz()
                                 {
+                                    Debug.Log("Quit Quiz");
                                     Destroy(ButtonClone1);
                                     Destroy(ButtonClone2);
                                     Destroy(ButtonClone3);
@@ -210,6 +213,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
 
                                 void runGenerator()
@@ -227,6 +231,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
                             }
                         }
@@ -284,6 +289,7 @@ public class SelectionManager : MonoBehaviour
                                 ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject QuestionClone = Instantiate(WMachineQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
                                 QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                quizOpen = true;
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
@@ -308,6 +314,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
 
                                 void runWMachine()
@@ -324,6 +331,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
                             }
                         }
@@ -383,6 +391,7 @@ public class SelectionManager : MonoBehaviour
                                 ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject QuestionClone = Instantiate(TVQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
                                 QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                quizOpen = true;
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
@@ -399,6 +408,7 @@ public class SelectionManager : MonoBehaviour
 
                                 void quitQuiz()
                                 {
+                                    Debug.Log("Quit Quiz");
                                     Destroy(ButtonClone1);
                                     Destroy(ButtonClone2);
                                     Destroy(ButtonClone3);
@@ -406,6 +416,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
 
                                 void runTV()
@@ -422,6 +433,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
                             }
                         }
@@ -451,6 +463,7 @@ public class SelectionManager : MonoBehaviour
                                 ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject QuestionClone = Instantiate(RadioQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
                                 QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                quizOpen = true;
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
@@ -474,6 +487,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
 
                                 void runRadio()
@@ -490,6 +504,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
                             }
                         }
@@ -519,6 +534,7 @@ public class SelectionManager : MonoBehaviour
                                 ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject QuestionClone = Instantiate(FridgeQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
                                 QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                quizOpen = true;
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
@@ -542,6 +558,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
 
                                 void runFridge()
@@ -558,6 +575,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
                             }
                         }
@@ -587,6 +605,7 @@ public class SelectionManager : MonoBehaviour
                                 ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject QuestionClone = Instantiate(MicrowaveQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
                                 QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                quizOpen = true;
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
@@ -610,6 +629,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
 
                                 void runMicrowave()
@@ -626,6 +646,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
                             }
                         }
@@ -655,6 +676,7 @@ public class SelectionManager : MonoBehaviour
                                 ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject QuestionClone = Instantiate(LaptopQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
                                 QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                quizOpen = true;
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
@@ -678,6 +700,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
 
                                 void runLaptop()
@@ -694,6 +717,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
                             }
                         }
@@ -746,6 +770,7 @@ public class SelectionManager : MonoBehaviour
                                 ButtonClone4.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject QuestionClone = Instantiate(CarQuestion, new Vector3(39.87759f, 22.2507f, 0), transform.rotation);
                                 QuestionClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                quizOpen = true;
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
@@ -769,6 +794,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
 
                                 void runCar()
@@ -785,6 +811,7 @@ public class SelectionManager : MonoBehaviour
                                     Destroy(QuestionClone);
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
+                                    quizOpen = false;
                                 }
                             }
                         }
