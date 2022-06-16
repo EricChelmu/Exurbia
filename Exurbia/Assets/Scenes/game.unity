@@ -4134,7 +4134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectNoPaper: {fileID: 2169887275875077687, guid: 39e2bf63d018fb34091a8e66d48f8290, type: 3}
-  NoPower: {fileID: 0}
+  NoPower: {fileID: 8050286424574371520, guid: ade1c08c69a856743bafada1a8df0166, type: 3}
   CablePicked: {fileID: 1065842161438451158, guid: d917f7c3843706948bca0dc4259a01d4, type: 3}
   GenRestored: {fileID: 3614830508414879467, guid: 83618e8784a2f6f4c9fd3eba79de2ce0, type: 3}
   Light1: {fileID: 7698074326166234872, guid: 9daa8914ae580df41a9604e253b572e7, type: 3}
@@ -13400,6 +13400,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Selectable
       objectReference: {fileID: 0}
+    - target: {fileID: 384991480667196924, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 384991480667196924, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 389582125457497058, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 389582125457497058, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 401890502680830332, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13616,6 +13632,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Selectable
       objectReference: {fileID: 0}
+    - target: {fileID: 3194550663309498510, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194550663309498510, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 3381782867098048493, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13668,6 +13692,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4991c3f3a0da3914e84176c39dde9f7b, type: 2}
+    - target: {fileID: 4351193723417227672, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4351193723417227672, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 4480074723575326587, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13840,11 +13872,27 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 72e0d19cbd0f073428e35608140111d3, type: 2}
+    - target: {fileID: 8506688079013953416, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506688079013953416, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8506688079837107847, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Name
       value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 8506688079837107847, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531101566817769614, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531101566817769614, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_TagString
       value: Selectable
       objectReference: {fileID: 0}
@@ -13872,11 +13920,27 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4991c3f3a0da3914e84176c39dde9f7b, type: 2}
+    - target: {fileID: 8718104561819459243, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718104561819459243, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 8797565228804478834, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_Name
       value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: 8797565228804478834, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797565229592002173, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
+      propertyPath: m_Name
+      value: Microwave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797565229592002173, guid: 7f3c76443b86f094e9951d7ede3b96eb, type: 3}
       propertyPath: m_TagString
       value: Selectable
       objectReference: {fileID: 0}
