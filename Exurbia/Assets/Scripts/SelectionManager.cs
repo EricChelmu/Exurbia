@@ -192,7 +192,7 @@ public class SelectionManager : MonoBehaviour
 
                             //Start quiz if cable was picked and paper was read
                             if (GameManager.Instance.cablePicked == true && GameManager.Instance.generatorOn == false && GameManager.Instance.paperGenRead == true)
-                            {
+                            { 
                                 GameObject ButtonClone1 = Instantiate(GenButton1, new Vector3(-319, -192, 0), transform.rotation);
                                 ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 GameObject ButtonClone2 = Instantiate(GenButton2Right, new Vector3(394, -192, 0), transform.rotation);
@@ -207,7 +207,7 @@ public class SelectionManager : MonoBehaviour
 
                                 Cursor.visible = true;
                                 Cursor.lockState = CursorLockMode.None;
-                                
+
                                 Button GenButton2RightComp = ButtonClone2.GetComponent<Button>();
                                 GenButton2RightComp.onClick.AddListener(runGenerator);
                                 Button GenButton1Comp = ButtonClone1.GetComponent<Button>();
