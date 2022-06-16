@@ -183,7 +183,7 @@ public class SelectionManager : MonoBehaviour
                             //If interacted with without cable
                             if (GameManager.Instance.cablePicked == false && GameManager.Instance.generatorOn == false)
                             {
-                                GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -316, 0), transform.rotation);
+                                GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -709, 0), transform.rotation);
                                 Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone2, readTimer);
                             }
