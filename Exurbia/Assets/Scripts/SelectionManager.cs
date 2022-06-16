@@ -97,6 +97,7 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] public TMP_Text partCounter;
     private int pages = 0;
     private int parts = 0;
+    private int readTimer = 6;
     private float distPlayerObj;
     bool alreadyCountedGen = false;
     bool alreadyCountedCar = false;
@@ -155,9 +156,9 @@ public class SelectionManager : MonoBehaviour
                             Destroy(hit.transform.gameObject);
                             GameManager.Instance.cablePicked = true;
                             //Display text on screen
-                            GameObject Clone = Instantiate(CablePicked, new Vector3(0, -316, 0), transform.rotation);
+                            GameObject Clone = Instantiate(CablePicked, new Vector3(0, -709, 0), transform.rotation);
                             Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                            Destroy(Clone, 3);
+                            Destroy(Clone, readTimer);
                             if (GameManager.Instance.cablePicked == true && alreadyCountedCablePart == false)
                             {
                                 alreadyCountedCablePart = true;
@@ -182,9 +183,9 @@ public class SelectionManager : MonoBehaviour
                             //If interacted with without cable
                             if (GameManager.Instance.cablePicked == false && GameManager.Instance.generatorOn == false)
                             {
-                                GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -709, 0), transform.rotation);
+                                GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -316, 0), transform.rotation);
                                 Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone2, 3);
+                                Destroy(Clone2, readTimer);
                             }
 
                             //Start quiz if cable was picked and paper was read
@@ -293,7 +294,7 @@ public class SelectionManager : MonoBehaviour
                             {
                                 GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone, 3);
+                                Destroy(Clone, readTimer);
                             }
                                 
                             if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperWMachineRead == true)
@@ -342,7 +343,7 @@ public class SelectionManager : MonoBehaviour
                                     ReduceEnergy(400);
                                     GameObject Clone2 = Instantiate(WMachineText, new Vector3(0, -316, 0), transform.rotation);
                                     Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                    Destroy(Clone2, 3);
+                                    Destroy(Clone2, readTimer);
                                     GameManager.Instance.WMachineOn = true;
                                     Destroy(ButtonClone1);
                                     Destroy(ButtonClone2);
@@ -409,7 +410,7 @@ public class SelectionManager : MonoBehaviour
                             {
                                 GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone, 3);
+                                Destroy(Clone, readTimer);
                             }
 
                             if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperTVRead == true)
@@ -494,7 +495,7 @@ public class SelectionManager : MonoBehaviour
                             {
                                 GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone, 3);
+                                Destroy(Clone, readTimer);
                             }
 
                             if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperRadioRead == true)
@@ -578,7 +579,7 @@ public class SelectionManager : MonoBehaviour
                             {
                                 GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone, 3);
+                                Destroy(Clone, readTimer);
                             }
                             if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperFridgeRead == true)
                             {
@@ -661,7 +662,7 @@ public class SelectionManager : MonoBehaviour
                             {
                                 GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone, 3);
+                                Destroy(Clone, readTimer);
                             }
                             if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperMicrowaveRead == true)
                             {
@@ -744,7 +745,7 @@ public class SelectionManager : MonoBehaviour
                             {
                                 GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone, 3);
+                                Destroy(Clone, readTimer);
                             }
                             if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperLaptopRead == true)
                             {
@@ -850,7 +851,7 @@ public class SelectionManager : MonoBehaviour
                             {
                                 GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
                                 Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
-                                Destroy(Clone, 3);
+                                Destroy(Clone, readTimer);
                             }
                             if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperCarRead == true)
                             {
