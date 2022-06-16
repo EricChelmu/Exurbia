@@ -21,7 +21,7 @@ public class CreatureSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         safeTimer += Time.deltaTime;
 
