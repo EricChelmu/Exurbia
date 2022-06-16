@@ -93,7 +93,9 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
     [SerializeField] public TMP_Text pageCounter;
+    [SerializeField] public TMP_Text partCounter;
     private int pages = 0;
+    private int parts = 0;
     private float distPlayerObj;
     bool alreadyCountedGen = false;
     bool alreadyCountedCar = false;
@@ -103,13 +105,16 @@ public class SelectionManager : MonoBehaviour
     bool alreadyCountedRadio = false;
     bool alreadyCountedFridge = false;
     bool alreadyCountedTV = false;
+    bool alreadyCountedCablePart = false;
+    bool alreadyCountedCarPart = false;
+    bool alreadyCountedWMachinePart = false;
+    bool alreadyCountedLaptopPart = false;
+    bool alreadyCountedMicrowavePart = false;
+    bool alreadyCountedRadioPart = false;
+    bool alreadyCountedFridgePart = false;
+    bool alreadyCountedTVPart = false;
     bool quizOpen = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -152,6 +157,12 @@ public class SelectionManager : MonoBehaviour
                             GameObject Clone = Instantiate(CablePicked, new Vector3(0, -316, 0), transform.rotation);
                             Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                             Destroy(Clone, 3);
+                            if (GameManager.Instance.cablePicked == true && alreadyCountedCablePart == false)
+                            {
+                                alreadyCountedCablePart = true;
+                                parts++;
+                            }
+                            partCounter.text = parts.ToString();
                         }
                     }
                 }
@@ -278,6 +289,7 @@ public class SelectionManager : MonoBehaviour
                         if (Input.GetKeyDown("e"))
                         {
                             if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperWMachineRead == true)
+                            
                             {
                                 GameObject ButtonClone1 = Instantiate(WMachineButton1, new Vector3(-319, -192, 0), transform.rotation);
                                 ButtonClone1.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
@@ -332,6 +344,12 @@ public class SelectionManager : MonoBehaviour
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
                                     quizOpen = false;
+                                    if (GameManager.Instance.WMachineOn == true && alreadyCountedWMachinePart == false)
+                                    {
+                                        alreadyCountedWMachinePart = true;
+                                        parts++;
+                                    }
+                                    partCounter.text = parts.ToString();
                                 }
                             }
                         }
@@ -434,6 +452,12 @@ public class SelectionManager : MonoBehaviour
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
                                     quizOpen = false;
+                                    if (GameManager.Instance.tvOn == true && alreadyCountedTVPart == false)
+                                    {
+                                        alreadyCountedTVPart = true;
+                                        parts++;
+                                    }
+                                    partCounter.text = parts.ToString();
                                 }
                             }
                         }
@@ -505,6 +529,12 @@ public class SelectionManager : MonoBehaviour
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
                                     quizOpen = false;
+                                    if (GameManager.Instance.radioOn == true && alreadyCountedRadioPart == false)
+                                    {
+                                        alreadyCountedRadioPart = true;
+                                        parts++;
+                                    }
+                                    partCounter.text = parts.ToString();
                                 }
                             }
                         }
@@ -576,6 +606,12 @@ public class SelectionManager : MonoBehaviour
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
                                     quizOpen = false;
+                                    if (GameManager.Instance.fridgeOn == true && alreadyCountedFridgePart == false)
+                                    {
+                                        alreadyCountedFridgePart = true;
+                                        parts++;
+                                    }
+                                    partCounter.text = parts.ToString();
                                 }
                             }
                         }
@@ -647,6 +683,12 @@ public class SelectionManager : MonoBehaviour
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
                                     quizOpen = false;
+                                    if (GameManager.Instance.microwaveOn == true && alreadyCountedMicrowavePart == false)
+                                    {
+                                        alreadyCountedMicrowavePart = true;
+                                        parts++;
+                                    }
+                                    partCounter.text = parts.ToString();
                                 }
                             }
                         }
@@ -718,6 +760,12 @@ public class SelectionManager : MonoBehaviour
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
                                     quizOpen = false;
+                                    if (GameManager.Instance.laptopOn == true && alreadyCountedLaptopPart == false)
+                                    {
+                                        alreadyCountedLaptopPart = true;
+                                        parts++;
+                                    }
+                                    partCounter.text = parts.ToString();
                                 }
                             }
                         }
@@ -812,6 +860,12 @@ public class SelectionManager : MonoBehaviour
                                     Cursor.visible = false;
                                     Cursor.lockState = CursorLockMode.Locked;
                                     quizOpen = false;
+                                    if (GameManager.Instance.carOn == true && alreadyCountedCarPart == false)
+                                    {
+                                        alreadyCountedCarPart = true;
+                                        parts++;
+                                    }
+                                    partCounter.text = parts.ToString();
                                 }
                             }
                         }
