@@ -8,6 +8,7 @@ using TMPro;
 public class SelectionManager : MonoBehaviour
 {
     //Reference to texts when objects are interacted with
+    [SerializeField] private GameObject ObjectNoPaper;
     [SerializeField] private GameObject CablePicked;
     [SerializeField] private GameObject GenRestored;
     [SerializeField] private GameObject Light1;
@@ -181,7 +182,7 @@ public class SelectionManager : MonoBehaviour
                             //If interacted with without cable
                             if (GameManager.Instance.cablePicked == false && GameManager.Instance.generatorOn == false)
                             {
-                                GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -316, 0), transform.rotation);
+                                GameObject Clone2 = Instantiate(GenNoCable, new Vector3(0, -709, 0), transform.rotation);
                                 Clone2.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                                 Destroy(Clone2, 3);
                             }
@@ -288,6 +289,13 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the washing machine turns on/off
                         if (Input.GetKeyDown("e"))
                         {
+                            if (GameManager.Instance.WMachineOn == false && GameManager.Instance.paperWMachineRead == false)
+                            {
+                                GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
+                                Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone, 3);
+                            }
+                                
                             if (GameManager.Instance.WMachineOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperWMachineRead == true)
                             
                             {
@@ -397,6 +405,13 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the TV is turned on/off
                         if (Input.GetKeyDown("e"))
                         {
+                            if (GameManager.Instance.tvOn == false && GameManager.Instance.paperTVRead == false)
+                            {
+                                GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
+                                Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone, 3);
+                            }
+
                             if (GameManager.Instance.tvOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperTVRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(TVButton1, new Vector3(-319, -192, 0), transform.rotation);
@@ -475,6 +490,13 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
+                            if (GameManager.Instance.radioOn == false && GameManager.Instance.paperRadioRead == false)
+                            {
+                                GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
+                                Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone, 3);
+                            }
+
                             if (GameManager.Instance.radioOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperRadioRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(RadioButton1, new Vector3(-319, -192, 0), transform.rotation);
@@ -552,6 +574,12 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the microwave turns on/off
                         if (Input.GetKeyDown("e"))
                         {
+                            if (GameManager.Instance.fridgeOn == false && GameManager.Instance.paperFridgeRead == false)
+                            {
+                                GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
+                                Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone, 3);
+                            }
                             if (GameManager.Instance.fridgeOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperFridgeRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(FridgeButton1Right, new Vector3(-319, -192, 0), transform.rotation);
@@ -629,6 +657,12 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
+                            if (GameManager.Instance.microwaveOn == false && GameManager.Instance.paperMicrowaveRead == false)
+                            {
+                                GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
+                                Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone, 3);
+                            }
                             if (GameManager.Instance.microwaveOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperMicrowaveRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(MicrowaveButton1Right, new Vector3(-319, -192, 0), transform.rotation);
@@ -706,6 +740,12 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
+                            if (GameManager.Instance.laptopOn == false && GameManager.Instance.paperLaptopRead == false)
+                            {
+                                GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
+                                Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone, 3);
+                            }
                             if (GameManager.Instance.laptopOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperLaptopRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(LaptopButton1, new Vector3(-319, -192, 0), transform.rotation);
@@ -806,6 +846,12 @@ public class SelectionManager : MonoBehaviour
                         //When E is pressed the radio turns on/off
                         if (Input.GetKeyDown("e"))
                         {
+                            if (GameManager.Instance.carOn == false && GameManager.Instance.paperCarRead == false)
+                            {
+                                GameObject Clone = Instantiate(ObjectNoPaper, new Vector3(0, -709, 0), transform.rotation);
+                                Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+                                Destroy(Clone, 3);
+                            }
                             if (GameManager.Instance.carOn == false && GameManager.Instance.generatorOn == true && GameManager.Instance.paperCarRead == true)
                             {
                                 GameObject ButtonClone1 = Instantiate(CarButton1, new Vector3(-319, -192, 0), transform.rotation);

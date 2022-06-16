@@ -5135,18 +5135,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7eb003ffa9a8642a740ce60cc2911f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CablePicked: {fileID: 3588757526797371201, guid: d917f7c3843706948bca0dc4259a01d4, type: 3}
-  GenRestored: {fileID: 3730480553022257225, guid: 83618e8784a2f6f4c9fd3eba79de2ce0, type: 3}
+  ObjectNoPaper: {fileID: 2169887275875077687, guid: 39e2bf63d018fb34091a8e66d48f8290, type: 3}
+  CablePicked: {fileID: 1065842161438451158, guid: d917f7c3843706948bca0dc4259a01d4, type: 3}
+  GenRestored: {fileID: 3614830508414879467, guid: 83618e8784a2f6f4c9fd3eba79de2ce0, type: 3}
   Light1: {fileID: 7698074326166234872, guid: 9daa8914ae580df41a9604e253b572e7, type: 3}
-  GenNoCable: {fileID: 1626988708022102687, guid: b57a5ff5c192c61459f70b2c2910f61f, type: 3}
-  WMachineText: {fileID: 7991977332998291015, guid: 1ae4437fba3664d498856338605960b5, type: 3}
-  MicrowaveText: {fileID: 8383997297242401828, guid: 3c3489a7dc5e37b46836d0b8fe5fc7ce, type: 3}
-  TVText: {fileID: 7506571140932583389, guid: 4e642220249f5294ebdf0af40c9805f6, type: 3}
-  LaptopText: {fileID: 7236318056603580505, guid: 535ec5ee97a410e47b8f3b82642a0896, type: 3}
-  RadioText: {fileID: 9023095069815891379, guid: 39ff7ed0924376c43a01b097f102d1a9, type: 3}
-  BreakerBoxText: {fileID: 7210275837360119908, guid: d83c260ca7684b84d8754ed7fbd622db, type: 3}
-  FridgeText: {fileID: 1854545080638902287, guid: 2a2797e1a6d0aca41aecf4f7a5eab626, type: 3}
-  CarText: {fileID: 2279235059755674174, guid: 428a80d1fb574634a98e1f70c99fb9a7, type: 3}
+  GenNoCable: {fileID: 2862885486332567774, guid: b57a5ff5c192c61459f70b2c2910f61f, type: 3}
+  WMachineText: {fileID: 6741353596469875117, guid: 1ae4437fba3664d498856338605960b5, type: 3}
+  MicrowaveText: {fileID: 8462106870113410145, guid: 3c3489a7dc5e37b46836d0b8fe5fc7ce, type: 3}
+  TVText: {fileID: 8018945327551202621, guid: 4e642220249f5294ebdf0af40c9805f6, type: 3}
+  LaptopText: {fileID: 6615770728021537453, guid: 535ec5ee97a410e47b8f3b82642a0896, type: 3}
+  RadioText: {fileID: 6452947340689189188, guid: 39ff7ed0924376c43a01b097f102d1a9, type: 3}
+  BreakerBoxText: {fileID: 5251927296704989687, guid: d83c260ca7684b84d8754ed7fbd622db, type: 3}
+  FridgeText: {fileID: 3481084936463003164, guid: 2a2797e1a6d0aca41aecf4f7a5eab626, type: 3}
+  CarText: {fileID: 3719627841895716293, guid: 428a80d1fb574634a98e1f70c99fb9a7, type: 3}
   PaperGenText: {fileID: 8101835590839681485, guid: 35925b9d3f2ff9a49aa86c1c008e217c, type: 3}
   PaperCarText: {fileID: 4607528348654299215, guid: 62902a1725abc6a4b8f6492ab9eb03c5, type: 3}
   PaperFridgeText: {fileID: 8203028501032524472, guid: 5b41f0e8c23623646aeafb5424df9f5a, type: 3}
@@ -9458,7 +9459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 419225835318691588, guid: ffe46ed545879194abd0466709ee641f, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 419225835318691588, guid: ffe46ed545879194abd0466709ee641f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9589,7 +9590,7 @@ RectTransform:
   - {fileID: 1581216043}
   - {fileID: 1687245687}
   m_Father: {fileID: 2208031139671091435}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11862,7 +11863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8590430886722758350, guid: d8d4b6aa33a70fa4dbada3c7c922bb68, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8590430886722758350, guid: d8d4b6aa33a70fa4dbada3c7c922bb68, type: 3}
       propertyPath: m_AnchorMax.x
@@ -14370,7 +14371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2498639875484564374, guid: 035ed5a635b61d14d9fab51d1598b2b1, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2498639875484564374, guid: 035ed5a635b61d14d9fab51d1598b2b1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -46791,7 +46792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.3301887, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -46839,7 +46840,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2208031139671091435}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -47202,11 +47203,11 @@ RectTransform:
   - {fileID: 1237385180}
   - {fileID: 2208031139323708169}
   - {fileID: 1484097374}
-  - {fileID: 2208031138240771931}
-  - {fileID: 473819709}
   - {fileID: 467180654}
   - {fileID: 556866169}
   - {fileID: 683248654}
+  - {fileID: 2208031138240771931}
+  - {fileID: 473819709}
   - {fileID: 1113069064}
   - {fileID: 1702626172}
   - {fileID: 1141544172}
