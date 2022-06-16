@@ -7,6 +7,8 @@ public class CreatureIsVisible : MonoBehaviour
 {
     //reference to the Player script
     [SerializeField] private GameObject Creature;
+    [SerializeField] private AudioSource creatureScreamSource;
+    [SerializeField] private AudioClip creatureScreamClip;
     public PlayerMovement PlayerScript;
     Renderer m_Renderer;
     CanvasGroup fadeAlpha;
@@ -14,6 +16,7 @@ public class CreatureIsVisible : MonoBehaviour
     private float playerPosX;
     private float playerPosY;
     private float playerPosZ;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +32,9 @@ public class CreatureIsVisible : MonoBehaviour
         playerPosZ = PlayerScript.transform.position.z + 2;
         if (m_Renderer.isVisible && !Physics.Linecast(Camera.main.transform.position, transform.position))
         {
-            //transform.rotation = PlayerScript.transform.rotation;
+            creatureScreamSource.PlayOneShot(creatureScreamClip);
             if (PlayerScript.health <= 200)
             {
-                //soundhere
-
                 PlayerScript.health += 46 * Time.deltaTime;
                 fadeAlpha.alpha += fadeSpeed;
                 if (PlayerScript.health >= 190)
@@ -51,6 +52,7 @@ public class CreatureIsVisible : MonoBehaviour
         }
         else if (!m_Renderer.isVisible)
         {
+            creatureScreamSource.Stop();
             if (PlayerScript.health >= 75)
             {
                 PlayerScript.health -= 35 * Time.deltaTime;
