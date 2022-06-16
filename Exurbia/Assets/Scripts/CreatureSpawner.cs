@@ -9,6 +9,7 @@ public class CreatureSpawner : MonoBehaviour
     [SerializeField] private GameObject Player;
     private GameObject CreatureClone;
     private float timer = 0;
+    private float safeTimer = 0;
     private float minTime = 5;
     private float maxTime = 10;
     private float spawnTime;
@@ -20,18 +21,24 @@ public class CreatureSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnTime - 0.1)
+        safeTimer += Time.deltaTime;
+
+        if (safeTimer >= 15)
         {
-            Destroy(CreatureClone);
+            timer += Time.deltaTime;
+            if (timer >= spawnTime - 0.1)
+            {
+                Destroy(CreatureClone);
+            }
+            if (timer >= spawnTime)
+            {
+                SpawnCreature();
+                SetRandomSpawnTime();
+            }
         }
-        if (timer >= spawnTime)
-        {
-            SpawnCreature();
-            SetRandomSpawnTime();
-        }
+        
     }
     void SpawnCreature()
     {
