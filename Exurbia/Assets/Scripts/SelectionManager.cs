@@ -96,6 +96,7 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private Material defaultMaterial;
     [SerializeField] public TMP_Text pageCounter;
     [SerializeField] public TMP_Text partCounter;
+    [SerializeField] private GameObject fixRadioText;
     private int pages = 0;
     private int parts = 0;
     private int readTimer = 6;
@@ -121,6 +122,11 @@ public class SelectionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (parts >= 8 && pages >= 8)
+        {
+            GameObject fixRadioClone = Instantiate(fixRadioText, new Vector3(0, -709, 0), transform.rotation);
+            fixRadioClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+        }
         if (GameManager.Instance.paperRead == true && Input.GetKeyDown("e"))
         {
             Destroy(PaperGenClone);
