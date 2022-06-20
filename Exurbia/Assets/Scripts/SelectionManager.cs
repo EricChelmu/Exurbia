@@ -118,14 +118,16 @@ public class SelectionManager : MonoBehaviour
     bool alreadyCountedFridgePart = false;
     bool alreadyCountedTVPart = false;
     bool quizOpen = false;
+    bool fixRadioTextCheck = false;
    
     // Update is called once per frame
     void Update()
     {
-        if (parts >= 8 && pages >= 8)
+        if (parts >= 8 && pages >= 8 && fixRadioTextCheck == false)
         {
             GameObject fixRadioClone = Instantiate(fixRadioText, new Vector3(0, -709, 0), transform.rotation);
             fixRadioClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
+            fixRadioTextCheck = true;
         }
         if (GameManager.Instance.paperRead == true && Input.GetKeyDown("e"))
         {
