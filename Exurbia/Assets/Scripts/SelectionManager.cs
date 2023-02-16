@@ -123,18 +123,21 @@ public class SelectionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Display final text for finishing the game
         if (parts >= 8 && pages >= 8 && fixRadioTextCheck == false)
         {
             GameObject fixRadioClone = Instantiate(fixRadioText, new Vector3(0, -709, 0), transform.rotation);
             fixRadioClone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
             fixRadioTextCheck = true;
         }
+        //Destroy the paper together with the text when E is pressed after paper is open
         if (GameManager.Instance.paperRead == true && Input.GetKeyDown("e"))
         {
             Destroy(PaperGenClone);
             Destroy(PaperGenTextClone);
             GameManager.Instance.paperRead = false;
         }
+        //Change material of highlighted object from yellow to its initial material
         if (_selection != null)
         {
             var selectionRenderer = _selection.GetComponent<Renderer>();
@@ -146,6 +149,7 @@ public class SelectionManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            //Check the distance between the player and the selectable object to simulate realistic distance
             distPlayerObj = Vector3.Distance(PlayerScript.transform.position, hit.transform.position);
             var selection = hit.transform;
             if (selection.CompareTag(selectableTag) && distPlayerObj <= 7f && quizOpen == false)
@@ -168,6 +172,7 @@ public class SelectionManager : MonoBehaviour
                             GameObject Clone = Instantiate(CablePicked, new Vector3(0, -709, 0), transform.rotation);
                             Clone.transform.SetParent(GameObject.FindGameObjectWithTag("MainCanvas").transform, false);
                             Destroy(Clone, readTimer);
+                            //Increase on screen counter
                             if (GameManager.Instance.cablePicked == true && alreadyCountedCablePart == false)
                             {
                                 alreadyCountedCablePart = true;
